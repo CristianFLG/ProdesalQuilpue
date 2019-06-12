@@ -19,7 +19,9 @@ class PageController extends Controller
 	{
 		$portadas = Portada::with('imagens')->paginate(8);
 		$productores = Productor::with('imagen')->paginate(3);
-		$rubros = Rubro::orderBy('id')->pluck('nombre_rubro','id');
+
+		$rubros = Rubro::get();
+
 		$productos = Producto::with('imagens','productors')->paginate();
 		$experiencias = Experiencia::with('imagenes','productores')->paginate(8);
 		JavaScript::put([

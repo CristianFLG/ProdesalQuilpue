@@ -96,8 +96,9 @@ class ProductoresController extends Controller
         $productor = Productor::find($id);
         $capital = Capitalcultural::orderBy('id')->pluck('nombre_capital','id');
         $asociaciones = Asociacion::orderBy('id')->pluck('nombre','id');
+        $rubro = Rubro::orderBy('id')->pluck('nombre_rubro','id');
         $defaultcap = Asociacion::with('productores');   
-        return view('admin.productores.edit', compact('productor','capital','asociaciones'));
+        return view('admin.productores.edit', compact('productor','capital','asociaciones','rubro'));
     }
 
     /**
