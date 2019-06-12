@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Productor extends Model
 {
 	protected $fillable =[
-		'id','id_capitalcult','nombre','rut','telefono','lugar','redes','coordenadas'
+		'id','id_capitalcult','id_rubro','nombre','rut','telefono','lugar','redes','lat','lon'
 	];
 	
     public function productos()
@@ -34,6 +34,8 @@ class Productor extends Model
     public function asociaciones(){
 		return $this->belongsToMany(Asociacion::class);
 	}
-
+	public function rubros(){
+		return $this->belongsTo(Rubro::class);
+	}
 	
 }

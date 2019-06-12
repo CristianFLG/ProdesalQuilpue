@@ -3,6 +3,10 @@
     {{ Form::select('id_capitalcult', $capital, 'No pertenece', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
+    {{ Form::label('id_rubro', 'Rubro') }}
+    {{ Form::select('id_rubro', $rubro, 'Nn', ['class' => 'form-control'])}}
+</div>
+<div class="form-group">
     {{ Form::label('nombre', 'Nombre Completo') }}
     {{ Form::text('nombre', null, ['class' => 'form-control']) }}
 </div>
@@ -23,8 +27,11 @@
     {{ Form::select('asociacion_id', $asociaciones, ' ', ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-    {{ Form::label('coordenadas', 'Coordenadas') }}
-    {{ Form::text('coordenadas', null, ['class' => 'form-control']) }}
+    {{ Form::label('lat', 'Latitud') }}
+    {{ Form::text('lat', null, ['class' => 'col-sm-4 form-control']) }}
+    <br>
+    {{ Form::label('lon', 'Longitud') }}
+    {{ Form::text('lon', null, ['class' => 'col-sm-4 form-control']) }}
 </div>
 <div class="form-group">
     {{ Form::label('image', 'Imagen') }}

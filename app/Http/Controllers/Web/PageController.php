@@ -8,6 +8,9 @@ use Prodesal\Portada;
 use Prodesal\Productor;
 use Prodesal\Producto;
 use Prodesal\Experiencia;
+use Prodesal\Rubro;
+use JavaScript;
+
 
 class PageController extends Controller
 {
@@ -16,14 +19,24 @@ class PageController extends Controller
 	{
 		$portadas = Portada::with('imagens')->paginate(8);
 		$productores = Productor::with('imagen')->paginate(3);
+		$rubros = Rubro::orderBy('id')->pluck('nombre_rubro','id');
 		$productos = Producto::with('imagens','productors')->paginate();
 		$experiencias = Experiencia::with('imagenes','productores')->paginate(8);
-			return view('layouts.boostrap',compact('productores','portadas','productos','experiencias'));
+		JavaScript::put([
+			'productores' => $productores
+		]);
+			return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
 	}
 
 	public function personas($id)
 	{
 		$productor = Productor::with('imagen','productos','experiencias')->find($id);
+		$productores = Productor::with('imagen')->paginate();
+		
+		JavaScript::put([
+			'productores' => $productores,
+			'productor' => $productor
+		]);
 		return view('web.personas',compact('productor'));
 	}
 	

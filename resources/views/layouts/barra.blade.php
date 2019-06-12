@@ -40,10 +40,10 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/" class="smoothScroll">INICIO</a></li>
 						<li>
-							<a href="{{ route('productores_todos') }}" class="smoothScroll">PRODUCTORES</a>
+							<a href="{{ route('productores_todos') }}" class="smoothScroll">SU GENTE</a>
 						</li>
 						<li><a href="{{ route('experiencias_todos') }}" class="smoothScroll">EXPERIENCIAS</a></li>
-						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">PRODUCTOS</a></li>
+						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">FRUTOS DE LA ZONA</a></li>
 						@guest
 
 						<li><a href="/login" class="smoothScroll">LOGIN</a></li>
@@ -106,6 +106,6 @@
 		<!-- jquery flexslider -->
 		<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
 		<!-- custom -->
-		<script src="{{ asset('js/custom.js') }}"></script>
+		<script src="{{ asset('js/map.js') }}"></script>
 </body>
 </html>

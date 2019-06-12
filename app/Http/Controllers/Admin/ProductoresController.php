@@ -10,6 +10,7 @@ use Prodesal\Productor;
 use Prodesal\Imagen;
 use Prodesal\Capitalcultural;
 use Prodesal\Asociacion;
+use Prodesal\Rubro;
 
 class ProductoresController extends Controller
 {
@@ -44,8 +45,9 @@ class ProductoresController extends Controller
     public function create()
     {
         $capital = Capitalcultural::orderBy('id')->pluck('nombre_capital','id');
+        $rubro = Rubro::orderBy('id')->pluck('nombre_rubro','id');
         $asociaciones = Asociacion::orderBy('id')->pluck('nombre','id');
-        return view('admin.productores.create', compact('capital','asociaciones'));    
+        return view('admin.productores.create', compact('capital','asociaciones','rubro'));    
     }
 
     /**
@@ -105,13 +107,15 @@ class ProductoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(ProductorStoreRequest $request, $id)
     {
         $productor = Productor::find($id);
         $productor->fill($request->all())->save();
         //imagen
         $productor->asociaciones()->sync($request->get('asociacion_id')); 
-        if($request->file('image')){
+        if($request->file('image'))
+        {
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();

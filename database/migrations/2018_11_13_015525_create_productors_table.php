@@ -16,15 +16,21 @@ class CreateProductorsTable extends Migration
         Schema::create('productors', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_capitalcult')->unsigned();
+            $table->integer('id_rubro')->unsigned();
             $table->string('nombre', 100);
             $table->string('rut',20);
             $table->integer('telefono')->length(10)->unsigned();
             $table->string('lugar')->nullable();
             $table->string('redes')->nullable();
-            $table->string('coordenadas')->nullable();
+            $table->float('lat')->nullable();
+            $table->float('lon')->nullable();
             $table->timestamps();
             //referencias
             $table->foreign('id_capitalcult')->references('id')->on('capitalculturals')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            //referencias
+            $table->foreign('id_rubro')->references('id')->on('rubros')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });

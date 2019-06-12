@@ -20,9 +20,8 @@
 		<!-- google font -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-		<!-- custom -->
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
@@ -41,10 +40,10 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/" class="smoothScroll">INICIO</a></li>
 						<li>
-							<a href="{{ route('productores_todos') }}" class="smoothScroll">PRODUCTORES</a>
+							<a href="{{ route('productores_todos') }}" class="smoothScroll">SU GENTE</a>
 						</li>
 						<li><a href="{{ route('experiencias_todos') }}" class="smoothScroll">EXPERIENCIAS</a></li>
-						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">PRODUCTOS</a></li>
+						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">FRUTOS DE LA ZONA</a></li>
 
 						@guest
 
@@ -101,10 +100,11 @@
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading">Experiencias</h3>
-								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en colliguay</p>
+								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en Colliguay.</p>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
@@ -112,10 +112,11 @@
 							</div>
 							<div class="media-body wow fadeIn">
 								<h3 class="media-heading">Productores</h3>
-								<p>Solution is a website template from Tooplate. You can download, edit and use this for any purpose.</p>
+								<p>Gente posee un gran corazón para dar y recibir, ya sea en sus productos como en las experiencias que pueden entregar.</p>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
@@ -123,21 +124,22 @@
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
 								<h3 class="media-heading">Productos</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism.</p>
+								<p>Los productos de la gente de Colliguay salen de la tierra sin ningún tipo de producto artificial de por medio.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
-								<i class="fa fa-archway"></i>
+								<i class="fa fa-handshake-o"></i>
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
 								<h3 class="media-heading">INDAP</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism.</p>
+								<p>Pretende terminar con la pobreza rural, generando políticas de desarrollo sustentable al campesinado.</p>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
@@ -145,7 +147,7 @@
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
 								<h3 class="media-heading">Colliguay</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism.</p>
+								<p>El Valle de Colliguay es el lugar perfecto para aventurarse y vivir una experiencia única e inolvidable.</p>
 							</div>
 						</div>
 					</div>
@@ -160,6 +162,7 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -188,13 +191,16 @@
 						<h2 class="wow bounce">Su Gente</h2>
 					</div>
 					@foreach($productores as $producor)
-						@foreach($producor->imagen as $i)
-					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-						@endforeach
-						<a href="{{ route('personas', $producor->id) }}"><img src="{{ $i->url_img }}" class="img-responsive" alt="team img"></a>		
+							@foreach($producor->imagen as $i)
+							@endforeach
+
+							
+					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">						
+						<a href="{{ route('personas', $producor->id) }}"><img src="{{ $i->url_img }}" class="img-responsive" alt="team img" ></a>		
 						<h4>{{ $producor->lugar }}</h4>
 						<h3>{{ $producor->nombre }}</h3>
-						<p>Productos, Experiencias y su zona.</p>
+						{{dd($rubros)}}
+						<p>{{ $rubros->nombre_rubro }}</p>
 						 <ul class="social-icon text-center">
            					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
           					 <li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
@@ -277,33 +283,24 @@
 						<h2><strong>INDAP</strong></h2>
 						<p>Servicio dependiente del Ministerio de Agricultura.</p>
 						<ul class="social-icon">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
+							<li><a href="https://es-la.facebook.com/INDAPChile/" class="fa fa-facebook" target="_blank"></a></li>
+							<li><a href="https://twitter.com/INDAP_Chile?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter" target="_blank"></a></li>
+							<li><a href="https://www.instagram.com/indapchile/" class="fa fa-instagram" target="_blank"></a></li>
 						</ul>
 					</div>
+							
+							
 					<div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
 						<address>
-							<h3>Visit Office</h3>
-							<p><i class="fa fa-map-marker too-icon"></i> 123 Walking Street, New York</p>
-							<p><i class="fa fa-phone too-icon"></i> 010-010-0220</p>
-							<p><i class="fa fa-envelope-o too-icon"></i> hello@company.com</p>
+							<h3>Visité nuestras oficinas</h3>
+							<p><i class="fa fa-map-marker too-icon"></i> Agustinas 1465, Santiago de Chile</p>
+							<p><i class="fa fa-phone too-icon"></i>+56 2 2303 8000</p>
+							<p><i class="fa fa-envelope-o too-icon"></i> indap@indap.cl</p>
 						</address>
 					</div>
-					<form action="#" method="post" class="col-md-6 col-sm-4" id="contact-form" role="form">
-							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+					<div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
+								<img src="{{ asset('images/logoindap.jpg') }}">
 							</div>
-							<div class="col-md-6 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-							<div class="col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
-								<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
-							</div>
-							<div class="col-md-offset-9 col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-								<input name="submit" type="submit" class="form-control" id="submit" value="Send">
-							</div>
-					</form>
 				</div>
 			</div>
 		</div>
@@ -347,6 +344,7 @@
 		</div>
 		<!-- end google map -->
 
+
 		<!-- start footer -->
 		<footer>
 			<div class="container">
@@ -370,14 +368,7 @@
 		</footer>
 		<!-- end footer -->
 
-		<!-- COORDENADAS -->
-		<form>
-			
-			<div style="visibility: hidden"> </div>
-			<input type="hidden" name="" id="tablacoord" value="{{ json_encode($prod->coordenadas) }}" hidden>
-		</form>
-
-		<span hidden>hola</span>
+		<!-- COORDENADAS -->			
 			
 		<!-- jQuery -->
 		<script src="{{ asset('js/jquery.js') }}"></script>
@@ -394,7 +385,8 @@
 		<!-- jquery flexslider -->
 		<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
 		<!-- custom -->
-		<script src="{{ asset('js/custom.js') }}"></script>
+		@include('footer');
+		<script src="{{ asset('js/map.js') }}"></script>
 
 	</body>
 </html>
