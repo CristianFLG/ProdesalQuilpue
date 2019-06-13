@@ -9,10 +9,10 @@
                
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <strong>Lista de Productos </strong>
                        </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                         {!! Form::open(['route' => 'searchProducto', 'method' => 'GET', 'class' => 'form-inline'])  !!}
 
                         {!! Form::select('search',$rubros,null, ['class' => 'form-control']) !!}

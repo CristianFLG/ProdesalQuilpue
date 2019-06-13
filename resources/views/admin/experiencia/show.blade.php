@@ -10,7 +10,7 @@
                 <strong>Experiencia</strong>
                 @foreach($experiencia->productores as $tabla)
                    <a href="{{ route('productores.show', $tabla->id) }}" class="float-right btn btn-sm btn-primary">
-                        Volver
+                        ir al productor
                     </a>
                 @endforeach
                 </div>

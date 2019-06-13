@@ -11,10 +11,10 @@
 				
        		</div>
 			@endforeach
-			<div class="col-md-5 col-sm-5" style="text-align: left;">
+			<div class="col-md-6 col-sm-6" style="text-align: left;">
 				<h3>{{ $productor->nombre }}</h3>
 				<h4>Numero de Contacto: {{ $productor->telefono }}</h4>
-				<h4>Lugar: {{ $productor->lugar }}</h4>
+				<h4>Ubicación: {{ $productor->lugar }}</h4>
 				<ul class="social-icon text-left" >
            			<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
           			<li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
