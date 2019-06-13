@@ -23,7 +23,8 @@ class PageController extends Controller
 		$productos = Producto::with('imagens','productors')->paginate();
 		$experiencias = Experiencia::with('imagenes','productores')->paginate(8);
 		JavaScript::put([
-			'productores' => $productores
+			'productores' => $productores,
+			'rubros' => $rubros
 		]);
 			return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
 	}

@@ -39,6 +39,9 @@ function coordenadas()
     {
       for(var j=0 ; j < productores.data[i]["imagen"].length ; j++)
       {  
+        for (var r = 0; r < rubros.length; r++) {
+          
+        
         markers[i] = [
         productores.data[i].nombre, 
         productores.data[i].lat, 
@@ -52,8 +55,10 @@ function coordenadas()
           '</div>'+
           '<div class="info_content col-sm-4">' +
           '<h4><a href="../personas/'+productores.data[i].id+'">'+productores.data[i].nombre+'</a></h4>' +
+          '<h4>'+rubros[r]+'</h4>'+
           '</div>'
         ]
+      }
       }
     }
   }

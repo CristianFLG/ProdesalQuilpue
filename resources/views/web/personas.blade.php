@@ -15,7 +15,7 @@
 				<h3>{{ $productor->nombre }}</h3>
 				@foreach($rubros as $rub)
 							@if ($productor->id_rubro == $rub->id)
-								<p><b>Productor: {{ $rub->nombre_rubro }}</p></b>
+								<h4>Tipo de Productos: {{ $rub->nombre_rubro }}</h4>
 							@endif
 				@endforeach
 				<h4>Numero de Contacto: {{ $productor->telefono }}</h4>
