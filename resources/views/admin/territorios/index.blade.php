@@ -3,21 +3,19 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <strong>Listado de Territorios</strong>
+                    <strong>Agregar nuevo Territorio</strong>
                     <a href="{{ route('territorios.create') }}" class="btn btn-primary">
                         <i class="fa fa-plus" aria-hidden="true" data-toggle="tooltip" title="Agregar Nuevo Territorio"></i>
-                    </a>
                     </a>
                 </div>
                 <hr>
                 <div class="panel-body">
-
                     <table class="table table-striped table-hover">
                         <thead>
-                            <tr >
+                            <tr>
                                 <th>ID</th>
                                 <th>Familia</th>
                                 <th>Coordenadas</th>
@@ -40,11 +38,10 @@
                                 <td>{{ $terr->estanque }}</td>
                                 <td>{{ $terr->pradera }}</td>
                                 <td>{{ $terr->colmenar }}</td>
-                  
                                 <td width="10px">
                                     <a href="{{ route('territorios.show', $terr->id) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>
-                                 <td width="10px">
+                                <td width="10px">
                                     <a href="{{ route('territorios.edit', $terr->id) }}" class="btn btn-sm btn-default">Editar</a>
                                 </td>
                                 <td width="10px">

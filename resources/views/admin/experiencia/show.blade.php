@@ -7,12 +7,12 @@
         <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                <strong>Experiencia</strong>
-                @foreach($experiencia->productores as $tabla)
-                   <a href="{{ route('productores.show', $tabla->id) }}" class="float-right btn btn-sm btn-primary">
-                        ir al productor
-                    </a>
-                @endforeach
+                    <strong>Experiencia</strong>
+                    @foreach($experiencia->productores as $tabla)
+                        <a href="{{ route('productores.show', $tabla->id) }}" class="float-right btn btn-sm btn-primary">
+                            ir al productor
+                        </a>
+                    @endforeach
                 </div>
                 <br>
                 <div class="panel-body">

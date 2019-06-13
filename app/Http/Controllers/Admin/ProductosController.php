@@ -31,7 +31,6 @@ class ProductosController extends Controller
 
         return view('admin.productos.index' , compact('productos','rubros'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,6 +40,7 @@ class ProductosController extends Controller
     {
         $rubros = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
         $productores = Productor::find($id);
+
         return view('admin.productos.create', compact('rubros','productores'));     
     }
 
@@ -49,6 +49,7 @@ class ProductosController extends Controller
         $search = $request->get('search');
         $productos = Producto::where('id_rubro','like','%'.$search.'%')->paginate();
         $rubros = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
+
         return view('admin.productos.index', compact('productos','rubros'));
     }
     /**
@@ -69,6 +70,7 @@ class ProductosController extends Controller
             $imagen->fill(['url_img' => asset($path)])->save();
             $productos->imagens()->attach($imagen->id);
         }
+
         return redirect()->route('productores.show', $request->id_productor)
         ->with('info','Producto Creado con éxito !!');
     }
@@ -99,6 +101,7 @@ class ProductosController extends Controller
         $rubros = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
         $producto = Producto::find($id);
         $productores = $this->NameProdcutor($id);
+
         return view('admin.productos.edit', compact('producto', 'rubros','productores'));
     }
 
@@ -111,6 +114,7 @@ class ProductosController extends Controller
         foreach($productos->productors as $tabla){
            $result = $tabla;
         }
+
         return $result;
     }
     /**
@@ -134,6 +138,7 @@ class ProductosController extends Controller
             //imagen-experiencia
             $producto->imagens()->sync($imagen->id);
         }
+
         return redirect()->route('productores.show', $request->id_productor)
         ->with('info','Producto Actualizado con éxito !!');
     }

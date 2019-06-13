@@ -13,6 +13,11 @@
 			@endforeach
 			<div class="col-md-6 col-sm-6" style="text-align: left;">
 				<h3>{{ $productor->nombre }}</h3>
+				@foreach($rubros as $rub)
+							@if ($productor->id_rubro == $rub->id)
+								<p><b>Productor: {{ $rub->nombre_rubro }}</p></b>
+							@endif
+				@endforeach
 				<h4>Numero de Contacto: {{ $productor->telefono }}</h4>
 				<h4>Ubicación: {{ $productor->lugar }}</h4>
 				<ul class="social-icon text-left" >

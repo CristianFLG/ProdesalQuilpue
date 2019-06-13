@@ -201,10 +201,8 @@
 						<h3>{{ $producor->nombre }}</h3>
 						@foreach($rubros as $rub)
 							@if ($producor->id_rubro == $rub->id)
-								<p> {{ $rub->nombre_rubro }}</p>
+								<b>Productor de:<p> {{ $rub->nombre_rubro }}</p></b>
 							@endif
-							
-							
 						@endforeach
 						 <ul class="social-icon text-center">
            					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
