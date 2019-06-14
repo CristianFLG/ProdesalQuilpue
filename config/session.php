@@ -166,7 +166,7 @@ return [
     |cambiar a true cuando se suba a internet
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE', false),
+    'secure' => env('SESSION_SECURE_COOKIE', true),
 
     /*
     |--------------------------------------------------------------------------
