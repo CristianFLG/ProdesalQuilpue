@@ -38,14 +38,14 @@ Route::get('/admin', function(){
 	return view('admin.index_admin');
 });
 //controladores administrador
-Route::resource('rubros', 			'admin\RubrosController');
-Route::resource('productos', 		'admin\ProductosController');
-Route::resource('productores', 		'admin\ProductoresController');
-Route::resource('experiencias', 	'admin\ExperienciasController');
-Route::resource('portadas', 		'admin\PortadaController');
-Route::resource('capitalcultural', 	'admin\CapitalCulturalController');
-Route::resource('territorios', 		'admin\TerritoriosController');
-Route::resource('asociaciones', 	'admin\AsociacionController');
+Route::resource('rubros', 			'Admin\RubrosController');
+Route::resource('productos', 		'Admin\ProductosController');
+Route::resource('productores', 		'Admin\ProductoresController');
+Route::resource('experiencias', 	'Admin\ExperienciasController');
+Route::resource('portadas', 		'Admin\PortadaController');
+Route::resource('capitalcultural', 	'Admin\CapitalCulturalController');
+Route::resource('territorios', 		'Admin\TerritoriosController');
+Route::resource('asociaciones', 	'Admin\AsociacionController');
 
 
 /*Route::get('imageform', function()
