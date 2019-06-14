@@ -53,7 +53,7 @@ function coordenadas()
               '<div class="col-sm-4">' +
               '<p><img src="'+productores.data[i]['imagen'][j].url_img+'" width="80px" height="80px"></p>' + 
               '</div>'+
-              '<div class="info_content col-sm-4">' +
+              '<div class="info_content col-sm-8">' +
               '<h4><a href="../personas/'+productores.data[i].id+'">'+productores.data[i].nombre+'</a></h4>' +
               
               '<h4>'+rubros[r].nombre_rubro+'</h4>'+
