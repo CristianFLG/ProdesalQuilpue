@@ -22,15 +22,15 @@ Route::get('/experiencias_todos','Web\PageController@experiencias')
 ->name('experiencias_todos');
 
 //BUSCARDOR Administrador
-Route::get('/search', 'admin\ProductoresController@search')->name('search');
-Route::get('/searchProducto', 'admin\ProductosController@searchProducto')->name('searchProducto');
-Route::get('/searchExperiencia', 'admin\ExperienciasController@searchExperiencia')->name('searchExperiencia');
+Route::get('/search', 'Admin\ProductoresController@search')->name('search');
+Route::get('/searchProducto', 'Admin\ProductosController@searchProducto')->name('searchProducto');
+Route::get('/searchExperiencia', 'Admin\ExperienciasController@searchExperiencia')->name('searchExperiencia');
 
 
 
 //ADMINISTRADOR
-Route::get('/experiencia/{id}','admin\ExperienciasController@create')->name('experiencia');
-Route::get('/producto/{id}','admin\ProductosController@create')->name('producto');
+Route::get('/experiencia/{id}','Admin\ExperienciasController@create')->name('experiencia');
+Route::get('/producto/{id}','Admin\ProductosController@create')->name('producto');
 //crop
 
 //admin index

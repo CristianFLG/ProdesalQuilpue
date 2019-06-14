@@ -179,7 +179,6 @@
 							
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">						
 						<a href="{{ route('personas', $producor->id) }}"><img src="{{ $i->url_img }}" class="img-responsive" alt="team img" ></a>		
-						<h4>{{ $producor->lugar }}</h4>
 						<h3>{{ $producor->nombre }}</h3>
 						@foreach($rubros as $rub)
 							@if ($producor->id_rubro == $rub->id)
