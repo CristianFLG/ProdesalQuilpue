@@ -34,9 +34,11 @@ class PageController extends Controller
 		$productor = Productor::with('imagen','productos','experiencias')->find($id);
 		$productores = Productor::with('imagen')->paginate();
 		$rubros = Rubro::get();
+		$rubros = Rubro::get();
 		JavaScript::put([
 			'productores' => $productores,
-			'productor' => $productor
+			'productor' => $productor,
+			'rubros' => $rubros
 		]);
 		return view('web.personas',compact('productor','rubros'));
 	}

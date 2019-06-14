@@ -44,24 +44,6 @@
 						</li>
 						<li><a href="{{ route('experiencias_todos') }}" class="smoothScroll">EXPERIENCIAS</a></li>
 						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">FRUTOS DE LA ZONA</a></li>
-
-						@guest
-
-						<li><a href="/login" class="smoothScroll">LOGIN</a></li>
-
-						@else
-						<li><a href="/productores" class="smoothScroll">ADMINISTRAR</a></li>
-    					<li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('LOGOUT') }}
-                            </a>
-                               	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                               	</form>
-                    	@endguest
-                        </li>
 					</ul>
 					</div> 
 				</div>
@@ -223,7 +205,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="title">
-							<h2 class="wow bounce">Resive nuestras novedades</h2>
+							<h2 class="wow bounce">Recibe nuestras novedades</h2>
 							<p class="wow fadeIn" data-wow-delay="0.6s">envía tu correo para mayor información sobre lo que estamos haciendo.</p>
 						</div>
 						<form action="#" method="get" class="wow fadeInUp" data-wow-delay="0.9s">
@@ -364,6 +346,23 @@
 							<li><a href="#" class="fa fa-pinterest"></a></li>
 							<li><a href="#" class="fa fa-google"></a></li>
 							<li><a href="#" class="fa fa-github"></a></li>
+							@guest
+
+							<li><a href="/login" class="smoothScroll">LOGIN</a></li>
+
+						@else
+							<li><a href="/productores" class="smoothScroll">ADMINISTRAR</a></li>
+	    					<li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('LOGOUT') }}
+                            </a>
+                               	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                               	</form>
+                    	@endguest
+                        	</li>
 						</ul>
 					</div>
 				</div>
