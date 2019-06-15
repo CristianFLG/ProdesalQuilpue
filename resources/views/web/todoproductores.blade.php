@@ -31,3 +31,4 @@
 			<div id="map-canvas"></div>
 		</div>
 @endsection
+@include('footer');

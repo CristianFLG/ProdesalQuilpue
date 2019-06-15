@@ -10,6 +10,10 @@ use Prodesal\Asociacion;
 
 class AsociacionController extends Controller
 {
+       public function __construct()
+    {
+        $this->middleware('auth');
+    }
 	public function index()
 	    {
 	    	$asociaciones = Asociacion::orderBy('nombre','DSC')->paginate();

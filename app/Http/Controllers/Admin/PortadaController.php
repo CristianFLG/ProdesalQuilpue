@@ -10,6 +10,10 @@ use Prodesal\Portada;
 
 class PortadaController extends Controller
 {
+       public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $portadas = Portada::with('imagens')->paginate(5);

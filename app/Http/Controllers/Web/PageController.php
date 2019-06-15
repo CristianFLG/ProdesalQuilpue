@@ -34,7 +34,6 @@ class PageController extends Controller
 		$productor = Productor::with('imagen','productos','experiencias')->find($id);
 		$productores = Productor::with('imagen')->paginate();
 		$rubros = Rubro::get();
-		$rubros = Rubro::get();
 		JavaScript::put([
 			'productores' => $productores,
 			'productor' => $productor,
@@ -46,9 +45,10 @@ class PageController extends Controller
 	public function detalle($id)
 	{
 		$productos = Producto::with('imagens','productors')->find($id);
+
 		$producto_rubro = Producto::with('imagens')->
 		where('id_rubro',$productos->id_rubro)->get();
-
+		
 		return view('web.productos',compact('productos','producto_rubro'));
 	}
 
@@ -62,6 +62,12 @@ class PageController extends Controller
 	public function productores()
 	{
 		$productores = Productor::with('imagen')->paginate(8);
+		$rubros = Rubro::get();
+
+		JavaScript::put([
+			'productores' => $productores,
+			'rubros' => $rubros
+		]);
 
 		return view('web.todoproductores',compact('productores'));
 	}

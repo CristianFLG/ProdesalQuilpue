@@ -25,7 +25,6 @@
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 		<!-- start navigation -->
-
 		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
 			<div class="container">
 				<div class="navbar-header">

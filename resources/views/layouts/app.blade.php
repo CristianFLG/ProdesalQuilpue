@@ -26,7 +26,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
@@ -75,7 +75,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </div>
 @if (session('info'))
             <div class="container">
                 <div class="row">

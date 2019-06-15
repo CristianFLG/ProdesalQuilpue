@@ -9,6 +9,10 @@ use Prodesal\Imagen;
 
 class ImagenesController extends Controller
 {
+	   public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
     	$imagenes = Imagen::orderBy('id','ASC')->paginate();

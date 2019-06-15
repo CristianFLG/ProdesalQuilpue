@@ -33,6 +33,7 @@ function coordenadas()
 
     var markers = [];
     var infoWindowContent = [];
+
   if(productores != null)
   {
     for (var i = 0; i < productores["data"].length; i++) 
