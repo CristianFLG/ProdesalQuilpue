@@ -1,14 +1,19 @@
 @extends('layouts.barra')
 
 @section('content')		
+		@foreach($eventos as $evento)
+			@foreach($evento->imagens as $imagen)
+			
+		
 		<style type="text/css">
 		#evento
     	{
-	        background: url({{}});
+	        background: url('../images/maxresdefault.jpg');
 	        background-size: cover;
 	        background-repeat: no-repeat;
 	        color: #ffffff;
     	}
+    	@endforeach
 		</style>
 		<div id="evento">
 			<div class="container">
@@ -39,6 +44,6 @@
 		<div class="google_map">
 			<div id="map-canvas"></div>
 		</div>
-
+		@endforeach
 @endsection
 @include('footer');

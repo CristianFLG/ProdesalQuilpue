@@ -9,6 +9,7 @@ use Prodesal\Productor;
 use Prodesal\Producto;
 use Prodesal\Experiencia;
 use Prodesal\Rubro;
+use Prodesal\Evento;
 use JavaScript;
 
 
@@ -97,12 +98,10 @@ class PageController extends Controller
 	
 	public function eventos()
 	{
-		$productores = Productor::with('imagen')->paginate();
-		$rubros = Rubro::get();
+		$eventos = Evento::with('imagens')->paginate();
 		JavaScript::put([
-			'productores' => $productores,
-			'rubros' => $rubros
+			
 		]);
-		return view('web.eventos');
+		return view('web.eventos',compact('eventos'));
 	}
 }
