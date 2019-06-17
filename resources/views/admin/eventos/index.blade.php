@@ -13,32 +13,29 @@
                 </div>
                 <hr>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover table-reflow">
+                    <table class="table table-condensed table-striped">
                         <thead>	
-                            <tr width="100%">
-                                <th width="10px">ID</th>
-                                <th>Titulo</th>
+                            <tr>
+                                <th width="5px">ID</th>
+                                <th width="15%">Titulo</th>
                                 <th>Ubicación</th>
-                                <th>Fechas</th>
-                                <th class="col-md-4">Detalles</th>
-                                <th>Imagen</th>
+                                <th >Fechas</th>
                                 <th colspan="3">&nbsp;</th>                              
                             </tr>
                         </thead>
                         <tbody>
-                        	@if($eventos!=null)
                         	@foreach($eventos as $evento)
                            	<tr>
                            		<td>{{ $evento->id }}</td>
                            		<td>{{ $evento->titulo }}</td>
                            		<td>{{ $evento->ubicacion }}</td>
                            		<td>{{ $evento->fecha_ini.'/'.$evento->fecha_ter }}</td>
-                           		<td style="width: 10px">{{ $evento->informacion }}</td>
-	                           	<td> 
-	                           		@foreach($evento->imagens as $tabla)
-	                                	<img src="{{ $tabla->url_img }}" class="img-fluid">  
-	                                @endforeach
-	                            </td>
+                              <td width="10px">
+                                    <a href="{{ route('eventos.show', $evento->id) }}" class="btn btn-sm btn-default">Ver</a>
+                              </td>
+                              <td width="10px">
+                                <a href="{{ route('eventos.edit', $evento->id) }}" class="btn btn-sm btn-default">Editar</a>
+                              </td>
                               <td>
                                 {!! Form::open(['route' => ['eventos.destroy', $evento->id], 'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
@@ -46,10 +43,10 @@
                                         </button>                           
                                 {!! Form::close() !!}
                               </td>
+
                            	</tr>
                            	@endforeach
-                           	@endif
-                        </tbody>   
+                          </tbody>   
                     </table>        
                 </div>
             </div>

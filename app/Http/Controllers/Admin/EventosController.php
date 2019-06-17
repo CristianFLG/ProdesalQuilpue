@@ -52,7 +52,7 @@ class EventosController extends Controller
 
     public function edit($id)
     {
-        $evento = Imagen::find($id);   
+        $evento = Evento::find($id);   
         return view('Admin.eventos.edit', compact('evento'));
     }
 
