@@ -22,7 +22,10 @@ class Imagen extends Model
 	 public function territorios(){
     	return $this->belongsToMany(Territorio::class);
     }
-    public function w(){
+    public function portadas(){
     	return $this->belongsToMany(Portada::class);
+    }
+   public function eventos(){
+    	return $this->belongsToMany(Eventos::class);
     }
 }

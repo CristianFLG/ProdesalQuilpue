@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagenPortadaTable extends Migration
+class CreateImagenEventoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateImagenPortadaTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagen_portada', function (Blueprint $table) 
+        Schema::create('evento_imagen', function (Blueprint $table) 
         {
             $table->increments('id');
             $table->integer('imagen_id')->unsigned();
-            $table->integer('portada_id')->unsigned();
+            $table->integer('evento_id')->unsigned();
             $table->timestamps();
             //referencia
             $table->foreign('imagen_id')->references('id')->on('imagens')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('portada_id')->references('id')->on('portadas')
+            $table->foreign('evento_id')->references('id')->on('eventos')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
@@ -36,6 +36,8 @@ class CreateImagenPortadaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imagen_portada');
+        Schema::dropIfExists('evento_imagen', function (Blueprint $table) {
+            //
+        });
     }
 }

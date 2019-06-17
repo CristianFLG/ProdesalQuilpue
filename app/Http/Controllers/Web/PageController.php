@@ -58,18 +58,28 @@ class PageController extends Controller
 		
 		return view('web.experiencias',compact('experiencias'));
 	}
-
+//Buscar de todos los productores
+	    public function searchProductor(Request $request)
+    {
+        $search = $request->get('search');
+        $productores = Productor::where('id_rubro','like','%'.$search.'%')->paginate();
+		$rubros = Rubro::get();
+		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
+        return view('web.todoproductores',compact('productores','rubros','listarubro'));
+    }
+//Todos los productores
 	public function productores()
 	{
 		$productores = Productor::with('imagen')->paginate(8);
 		$rubros = Rubro::get();
+		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
 
 		JavaScript::put([
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
 
-		return view('web.todoproductores',compact('productores'));
+		return view('web.todoproductores',compact('productores','listarubro','rubros'));
 	}
 
 	public function experiencias()
@@ -83,5 +93,16 @@ class PageController extends Controller
 		$productos = Producto::with('imagens','productors')->paginate(8);
 
 		return view('web.todoproductos',compact('productos'));
+	}
+	
+	public function eventos()
+	{
+		$productores = Productor::with('imagen')->paginate();
+		$rubros = Rubro::get();
+		JavaScript::put([
+			'productores' => $productores,
+			'rubros' => $rubros
+		]);
+		return view('web.eventos');
 	}
 }

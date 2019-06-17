@@ -21,53 +21,29 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-
 	</head>
-	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
-		<!-- start navigation -->
-		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-					</button>
-					<a href="/" class="navbar-brand"><img src="{{ asset('images/logo-prodesal.jpg') }}" class="img-responsive" alt="logo"></a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/" class="smoothScroll">INICIO</a></li>
-						<li>
-							<a href="{{ route('productores_todos') }}" class="smoothScroll">SU GENTE</a>
-						</li>
-						<li><a href="{{ route('experiencias_todos') }}" class="smoothScroll">EXPERIENCIAS</a></li>
-						<li><a href="{{ route('productos_todos') }}" class="smoothScroll">FRUTOS DE LA ZONA</a></li>
-					</ul>
-					</div> 
-				</div>
-			</div>
-		<!-- end navigation -->
 
+	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+	@extends('layouts.barra')
+
+	@section('content')
 		<!-- start home -->
 		<section id="home" class="text-center">
-		  <div class="templatemo_headerimage">
-		    <div class="flexslider">
-		      <ul class="slides">
-		      	@foreach($portadas as $imagenes)
-		      	
-		      	@if($imagenes->estado == 'ACTIVA')
-		      		@foreach($imagenes->imagens as $img)
-			        <li>
-			        	<img src="{{ asset($img->url_img) }}">
-			        </li>
-		        	@endforeach
-		        @endif
-		        @endforeach
-		      </ul>
-		    </div>
-		  </div>				
+		  	<div class="templatemo_headerimage">
+		    	<div class="flexslider">
+			      	<ul class="slides">
+			      		@foreach($portadas as $imagenes)
+			      			@if($imagenes->estado == 'ACTIVA')
+			      				@foreach($imagenes->imagens as $img)
+				        			<li>
+				        				<img src="{{ asset($img->url_img) }}">
+				        			</li>
+			        			@endforeach
+			        		@endif
+			        	@endforeach
+			      	</ul>
+		    	</div>
+		  	</div>				
 		</section>
 		<!-- end home -->
 
@@ -185,11 +161,6 @@
 								<b>Productor de:<p> {{ $rub->nombre_rubro }}</p></b>
 							@endif
 						@endforeach
-						 <ul class="social-icon text-center">
-           					<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
-          					 <li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
-          					 <li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
-       					 </ul>
 					</div>	
 					@endforeach
 					{{ $productores->render() }}
@@ -271,24 +242,22 @@
 							<li><a href="https://twitter.com/INDAP_Chile?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter" target="_blank"></a></li>
 							<li><a href="https://www.instagram.com/indapchile/" class="fa fa-instagram" target="_blank"></a></li>
 						</ul>
-					</div>
-							
-							
+					</div>				
 					<div class="col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.9s">
 						<address>
-							<h3>Visité nuestras oficinas</h3>
+							<h3>Visite nuestras oficinas</h3>
 							<p><i class="fa fa-map-marker too-icon"></i> Agustinas 1465, Santiago de Chile</p>
 							<p><i class="fa fa-phone too-icon"></i>+56 2 2303 8000</p>
 							<p><i class="fa fa-envelope-o too-icon"></i> indap@indap.cl</p>
 						</address>
 					</div>
-					<div class="col-md-4 col-sm-12 wow fadeIn" data-wow-delay="0.3s">
-								<img src="{{ asset('images/logoindap.jpg') }}">
-							</div>
+					<div class="col-md-4 col-sm-7 wow fadeIn" data-wow-delay="0.3s">
+						<img src="{{ asset('images/logoindap.jpg') }}" class="img-responsive">
+					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end contact -->
+		<!-- Experiencias -->
 		<div id="portfolio">
 			<div class="container">
 				<div class="row">
@@ -327,67 +296,8 @@
 			<div id="map-canvas"></div>
 		</div>
 		<!-- end google map -->
-
-
-		<!-- start footer -->
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-sm-7">
-						<p>Copyright &copy; 2018 Universidad Playa Ancha</p>
-						<small>Diseñada por<a rel="nofollow" href="http://www.tooplate.com" target="_parent"> Cristian Flores Gallardo</a></small>
-					</div>
-					<div class="col-md-4 col-sm-5">
-						<ul class="social-icon">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-pinterest"></a></li>
-							<li><a href="#" class="fa fa-google"></a></li>
-							<li><a href="#" class="fa fa-github"></a></li>
-							@guest
-
-							<li><a href="/login" class="smoothScroll">LOGIN</a></li>
-
-						@else
-							<li><a href="/productores" class="smoothScroll">ADMINISTRAR</a></li>
-	    					<li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('LOGOUT') }}
-                            </a>
-                               	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                               	</form>
-                    	@endguest
-                        	</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end footer -->
-
-		<!-- COORDENADAS -->			
-			
-		<!-- jQuery -->
-		<script src="{{ asset('js/jquery.js') }}"></script>
-		<!-- bootstrap -->
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-		<!-- isotope -->
-		<script src="{{ asset('js/isotope.js') }}"></script>
-		<!-- images loaded -->
-   		<script src="{{ asset('js/imagesloaded.min.js') }}"></script>
-   		<!-- wow -->
-		<script src="{{ asset('js/wow.min.js') }}"></script>
-		<!-- smoothScroll -->
-		<script src="{{ asset('js/smoothscroll.js') }}"></script>
-		<!-- jquery flexslider -->
-		<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
-		<!-- custom -->
+		
+		@endsection			
 		@include('footer');
-		<script src="{{ asset('js/map.js') }}"></script>
-
 	</body>
 </html>

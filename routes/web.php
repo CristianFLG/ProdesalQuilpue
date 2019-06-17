@@ -20,12 +20,16 @@ Route::get('/productores_todos','Web\PageController@productores')
 ->name('productores_todos');
 Route::get('/experiencias_todos','Web\PageController@experiencias')
 ->name('experiencias_todos');
+Route::get('/informacion','Web\PageController@eventos')->name('informacion');
 
 //BUSCARDOR Administrador
 Route::get('/search', 'Admin\ProductoresController@search')->name('search');
 Route::get('/searchProducto', 'Admin\ProductosController@searchProducto')->name('searchProducto');
-Route::get('/searchExperiencia', 'Admin\ExperienciasController@searchExperiencia')->name('searchExperiencia');
+Route::get('/searchExperiencia', 'Admin\ExperienciasController@searchExperiencia')->
+name('searchExperiencia');
+//BUSCADOR pagina productores,productos,experiencias
 
+Route::get('/searchProductor','Web\PageController@searchProductor')->name('searchProductor');
 
 
 //ADMINISTRADOR
@@ -46,6 +50,8 @@ Route::resource('portadas', 		'Admin\PortadaController');
 Route::resource('capitalcultural', 	'Admin\CapitalCulturalController');
 Route::resource('territorios', 		'Admin\TerritoriosController');
 Route::resource('asociaciones', 	'Admin\AsociacionController');
+Route::resource('eventos',          'Admin\EventosController');
+
 
 
 /*Route::get('imageform', function()

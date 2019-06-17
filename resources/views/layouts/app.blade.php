@@ -51,6 +51,7 @@
                             <li><a  class="nav-link" href="{{ route('productos.index') }}">Productos</a></li>
                             <li><a  class="nav-link" href="{{ route('experiencias.index') }}">Experiencias</a></li>
                             <li><a  class="nav-link" href="{{ route('territorios.index') }}">Territorios</a></li>
+                            <li><a  class="nav-link" href="{{ route('eventos.index') }}">Eventos</a></li>
                             <li><a  class="nav-link" href="{{ route('portadas.index') }}">Manejo Portada</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

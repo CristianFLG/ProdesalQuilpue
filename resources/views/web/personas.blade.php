@@ -24,13 +24,12 @@
            			<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
           			<li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
           			<li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
-       			</ul><hr>
+       			</ul>
+       			<hr class="style3">
 			</div>
 		</div>
 	</div>
-</div>
-<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%"></div>
-	<div class="col-md-12" ><br><br></div>
+	<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -55,37 +54,40 @@
 						</div>
 					</div>
 				</div>
-		<div class="col-md-12" ><br><hr></div>
+			</div>
+			<hr class="style3">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<h2 class="wow bounce">Experiencias</h2>
-							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
-               				 	<div class="iso-box-section">
-               				 		<div class="iso-box-wrapper col4-iso-box">
+						<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
+               				<div class="iso-box-section">
+               				 	<div class="iso-box-wrapper col4-iso-box">
 
-               				 			@foreach($productor->experiencias as $exper)
-               				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
-               				 				<div class="portfolio-thumb">
+               				 	@foreach($productor->experiencias as $exper)
+               				 		<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
+               				 			<div class="portfolio-thumb">
 
-               				 					@foreach($exper->imagenes as $phot)
+               				 				@foreach($exper->imagenes as $phot)
                				 					<a href="{{ route('detallexper',$exper->id) }}"><img src="{{ $phot->url_img }}" class="fluid-img" alt="portfolio img"></a>
-               				 					@endforeach
-               				 					<h4>{{ $exper->nombre_exper }}</h4>
-               				 					<h4>$ {{ $exper->precio }}</h4>
-               				 				</div>
+               				 				@endforeach
+               				 				<h4>{{ $exper->nombre_exper }}</h4>
+               				 				<h4>$ {{ $exper->precio }}</h4>
                				 			</div>
-               				 			@endforeach
                				 		</div>
+               				 	@endforeach
                				 	</div>
-							</div>
+               				 </div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
+			</div>	
+		
+</div>
+<hr class="style3">
 		<div class="google_map">
 			<div id="map-canvas"></div>
 		</div>
+
 @endsection
 @include('footer');

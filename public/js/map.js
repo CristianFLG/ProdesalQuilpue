@@ -7,7 +7,7 @@ function initialize()
 
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
-      zoom: 50,
+      zoom: 100,
       center: new google.maps.LatLng(-33.1686941,-71.1516272),
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.HYBRID  

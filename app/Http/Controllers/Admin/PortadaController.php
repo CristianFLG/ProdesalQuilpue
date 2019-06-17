@@ -3,7 +3,7 @@
 namespace Prodesal\Http\Controllers\admin;
 use Prodesal\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Prodesal\Http\Requests\PortadaSoreRequest;
+use Prodesal\Http\Requests\PortadaStoreRequest;
 use Illuminate\Http\Request;
 use Prodesal\Imagen;
 use Prodesal\Portada;
@@ -28,7 +28,7 @@ class PortadaController extends Controller
     }
 
 
-    public function store(PortadaSoreRequest $request)
+    public function store(PortadaStoreRequest $request)
     {
         $portada = Portada::create($request->all()); 
         //imagen

@@ -22,8 +22,8 @@ class CreateProductorsTable extends Migration
             $table->integer('telefono')->length(10)->unsigned();
             $table->string('lugar')->nullable();
             $table->string('redes')->nullable();
-            $table->float('lat')->nullable();
-            $table->float('lon')->nullable();
+            $table->double('lat',15,8)->nullable();
+            $table->double('lon',15,8)->nullable();
             $table->timestamps();
             //referencias
             $table->foreign('id_capitalcult')->references('id')->on('capitalculturals')
