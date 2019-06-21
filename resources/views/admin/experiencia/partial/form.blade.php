@@ -8,9 +8,14 @@
     {{ Form::text('nombre_exper', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
+    {{ Form::label('detalle', 'Detalle sobre la experiencia') }}
+    {{ Form::textarea('detalle', null, ['class' => 'form-control','row' => 3]) }}
+</div>
+<div class="form-group">
     {{ Form::label('precio', 'Precio') }}
     {{ Form::number('precio', null, ['class' => 'form-control']) }}
 </div>
+
 <div class="form-group">
     {{ Form::label('estado_exper', 'Estado') }}
     <br>

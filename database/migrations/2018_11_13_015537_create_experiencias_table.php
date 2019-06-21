@@ -18,6 +18,7 @@ class CreateExperienciasTable extends Migration
             
             $table->string('nombre_exper');
             $table->integer('precio')->length(9)->unsigned();
+            $table->text('detalle')->nullable();
             $table->enum('estado_exper',['ACTIVA','INACTIVA'])->default('ACTIVA');
             $table->timestamps();
         });

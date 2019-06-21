@@ -55,8 +55,10 @@ class PageController extends Controller
 	public function experiencia($id)
 	{	
 		$experiencias = Experiencia::with('productores','imagenes')->find($id);
+		$experiencia = Experiencia::with('imagenes','productores')->paginate(8);
+
 		
-		return view('web.experiencias',compact('experiencias'));
+		return view('web.experiencias',compact('experiencias','experiencia'));
 	}
 //Buscar de todos los productores
 	    public function searchProductor(Request $request)

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Experiencia extends Model
 {
 	protected $fillable =[
-		'id','nombre_exper','precio','estado_exper'
+		'id','nombre_exper','precio','detalle','estado_exper'
 	]; 
 
     public function productores()
@@ -16,7 +16,5 @@ class Experiencia extends Model
     }
     public function imagenes(){
     	return $this->belongsToMany(Imagen::class);
-    }
-
-    
+    }   
 }
