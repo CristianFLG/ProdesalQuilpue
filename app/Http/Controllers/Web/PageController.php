@@ -27,7 +27,7 @@ class PageController extends Controller
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
-			return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
+		return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
 	}
 
 	public function personas($id)
@@ -37,7 +37,6 @@ class PageController extends Controller
 		$rubros = Rubro::get();
 		JavaScript::put([
 			'productores' => $productores,
-			'productor' => $productor,
 			'rubros' => $rubros
 		]);
 		return view('web.personas',compact('productor','rubros'));
@@ -83,12 +82,25 @@ class PageController extends Controller
 		return view('web.todoproductores',compact('productores','listarubro','rubros'));
 	}
 
+
+  public function searchExperiencia(Request $request)
+    {
+    	$experiencias = Experiencia::where('nombre_exper','like','%'.$search.'%')->paginate();
+       return view('web.todoexperiencias',compact('experiencias'));
+    }
+
 	public function experiencias()
 	{
 		$experiencias = Experiencia::with('imagenes')->paginate(8);
 		return view('web.todoexperiencias',compact('experiencias'));
 	}
-
+	//Buscar de todos los productores
+	    public function searchProducto(Request $request)
+    {
+        $search = $request->get('search');
+        $productos = Producto::where('nombre_producto','like','%'.$search.'%')->paginate();
+        return view('web.todoproductos',compact('productos'));
+    }
 	public function productos()
 	{
 		$productos = Producto::with('imagens','productors')->paginate(8);
@@ -98,10 +110,15 @@ class PageController extends Controller
 	
 	public function eventos()
 	{
-		$eventos = Evento::with('imagens')->paginate();
+		$eventos = Evento::with('imagens')->paginate(2);
 		JavaScript::put([
-			
+			'productores' => null,
+			'eventos' => $eventos
 		]);
 		return view('web.eventos',compact('eventos'));
+	}
+	public function prueba()
+	{
+		return view('web.prueba');
 	}
 }

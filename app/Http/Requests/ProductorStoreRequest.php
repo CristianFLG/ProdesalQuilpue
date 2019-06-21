@@ -26,7 +26,7 @@ class ProductorStoreRequest extends FormRequest
         return [
             'nombre' => 'required|string',
             'rut'   => 'required',
-            'telefono' => 'required|max:10'
+            'telefono' => 'required|max:9'
             ];
     }
 }

@@ -33,21 +33,24 @@ class EventosController extends Controller
     {
         $eventos = Evento::create($request->all()); 
         //imagen
-        if($request->file('image'))
-        {
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $imagen = new Imagen;
-            $imagen->fill(['url_img' => asset($path)])->save();
-            $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
-        }
+        
+            if($request->file('image'))
+            {
+                $path = Storage::disk('public')->put('image',  $request->file('image'));
+                $imagen = new Imagen;
+                $imagen->fill(['url_img' => asset($path)])->save();
+                $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
+            }
+        
         return redirect()->route('eventos.index', $eventos->id)
         ->with('info','Evento Creada con éxito !!');
 	}
 
 	 public function show($id)
     {
-        $evento = Evento::find($id);    
-        return view('Admin.eventos.show', compact('evento'));
+        $evento = Evento::find($id); 
+        $imagen = Evento::with('imagens')->paginate();
+        return view('Admin.eventos.show', compact('evento','imagen'));
     }
 
     public function edit($id)
@@ -62,7 +65,7 @@ class EventosController extends Controller
     {
         $evento = Evento::find($id);
         $evento->fill($request->all())->save();
-        //imagen
+        //imagen        
           if($request->file('image'))
         {
             $path = Storage::disk('public')->put('image',  $request->file('image'));

@@ -11,7 +11,7 @@
                 </div>
                 <br>
                 <div class="panel-body">
-                    {!! Form::open(['route' => 'portadas.store','files' => true]) !!}
+                    {!! Form::open(['route' => 'portadas.store','files' => true ,'enctype' =>'multipart/form-data']) !!}
                         
                         @include('admin.portadas.partial.form')
 

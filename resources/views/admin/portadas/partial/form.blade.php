@@ -1,4 +1,4 @@
-
+   
 <div class="form-group">
     {{ Form::label('image', 'Imagen') }}
     {{ Form::file('image') }}
@@ -14,6 +14,8 @@
      {{ Form::radio('estado', 'INACTIVA') }} Inactiva
      </label>
 </div>
+ {{ csrf_field() }}
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-danger']) }}
 </div>
+ 

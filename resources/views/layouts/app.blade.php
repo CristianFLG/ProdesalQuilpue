@@ -14,6 +14,7 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imgareaselect.css') }}">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -31,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li  class="nav-item">
-                            <a href="/"><i class="fa fa-home"></i></a>
+                            
                         </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -47,6 +48,7 @@
                                 @endif
                             </li>
                         @else
+                        <li class="nav-item"><a class="nav-link" href="/admin">Inicio</a></li>
                             <li><a  class="nav-link" href="{{ route('productores.index') }}">Productores</a></li>
                             <li><a  class="nav-link" href="{{ route('productos.index') }}">Productos</a></li>
                             <li><a  class="nav-link" href="{{ route('experiencias.index') }}">Experiencias</a></li>
@@ -62,6 +64,7 @@
                                     <a class="dropdown-item" href="{{ route('asociaciones.index') }}">Asociaciones</a>
                                     <a class="dropdown-item" href="{{ route('capitalcultural.index') }}">Capital Cultural</a>
                                     <a class="dropdown-item" href="{{ route('rubros.index') }}">Rubros</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

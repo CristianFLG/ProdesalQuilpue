@@ -25,7 +25,6 @@
 
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 	@extends('layouts.barra')
-
 	@section('content')
 		<!-- start home -->
 		<section id="home" class="text-center">
@@ -37,6 +36,9 @@
 			      				@foreach($imagenes->imagens as $img)
 				        			<li>
 				        				<img src="{{ asset($img->url_img) }}">
+				        			<div class="slider-caption">
+				        				<h1>Bienvenidos</h1>
+				        			</div>
 				        			</li>
 			        			@endforeach
 			        		@endif

@@ -50,7 +50,7 @@
                                 </td>
                                 <td>
                                 @foreach($productor->imagen as $tabla)
-                                <img src="{{ $tabla->url_img }}" class="img-fluid">  
+                                <img src="{{ $tabla->url_img }}" class="img-fluid"  width="50%">  
                                 @endforeach
                                 </td>          
                             </tr>

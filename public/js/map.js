@@ -8,7 +8,7 @@ function initialize()
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
       zoom: 100,
-      center: new google.maps.LatLng(-33.1686941,-71.1516272),
+      center: null,
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.HYBRID  
     };
@@ -33,7 +33,6 @@ function coordenadas()
 
     var markers = [];
     var infoWindowContent = [];
-
   if(productores != null)
   {
     for (var i = 0; i < productores["data"].length; i++) 
@@ -56,9 +55,7 @@ function coordenadas()
               '</div>'+
               '<div class="info_content col-sm-8">' +
               '<h4><a href="../personas/'+productores.data[i].id+'">'+productores.data[i].nombre+'</a></h4>' +
-              
               '<h4>'+rubros[r].nombre_rubro+'</h4>'+
-            
               '</div>'
             ]
           }
@@ -68,26 +65,32 @@ function coordenadas()
   }
   else
       {
-      if(productor != null)
+      if(eventos != null)
         {
-        markers[i] = [
-        productor.data[i].nombre, 
-        productor.data[i].lat, 
-        productor.data[i].lon
-        ]
-        
-        infoWindowContent[i] = 
-        [
-          '<div class="col-sm-4">' +
-          '<p><img src="'+productor.data[i]['imagen'][j].url_img+'" width="80px" height="80px"></p>' + 
-          '</div>'+
-          '<div class="info_content col-sm-4">' +
-          '<h4><a href="../personas/'+productor.data[i].id+'">'+productor.data[i].nombre+'</a></h4>' +
-          '</div>'
+          for (var i = 0; i < eventos["data"].length; i++) 
+              {
+                for(var j=0 ; j < eventos.data[i]["imagens"].length ; j++)
+                {  
+                    markers[i] = 
+                    [
+                    eventos.data[i].ubicacion, 
+                    eventos.data[i].lat,
+                    eventos.data[i].lon
+                    ]
 
-        ]
+                      infoWindowContent[i] = 
+                      [
+                        '<div class="col-sm-4">' +
+                        '<p><img src="'+eventos.data[i]['imagens'][j].url_img+'" width="80px" height="80px"></p>' + 
+                        '</div>'+
+                        '<div class="info_content col-sm-8">' +
+                        '<h4>'+eventos.data[i].titulo+'</h4>' +                      
+                        '</div>'
+                      ]
+                }
+              }
+          }
       }
-    }
   
       var bounds = new google.maps.LatLngBounds();
       var infoWindow = new google.maps.InfoWindow(), marker, i;

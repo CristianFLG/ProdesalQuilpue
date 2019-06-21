@@ -16,7 +16,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('telefono', 'Telefono') }}
-    {{ Form::number('telefono', null, ['class' => 'form-control', 'maxlength' => '9']) }}
+    {{ Form::number('telefono', null, ['class' => 'form-control', 'maxlength' => '9', 'placeholder' =>'+56...']) }}
 </div>
 <div class="form-group">
     {{ Form::label('lugar', 'Localidad') }}

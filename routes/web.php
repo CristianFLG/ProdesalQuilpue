@@ -11,6 +11,7 @@ Route::get('/personas/{id}','Web\PageController@personas')->name('personas');
 Route::get('/producto/{id}/detalle','Web\PageController@detalle')->name('detalle');
 Route::get('/experiencia/{id}/detalle','Web\PageController@experiencia')
 ->name('detallexper');
+Route::get('/prueba', 'Web\PageController@prueba')->name('prueba');
 
 
 //BARRA DE INICIO
@@ -27,9 +28,11 @@ Route::get('/search', 'Admin\ProductoresController@search')->name('search');
 Route::get('/searchProducto', 'Admin\ProductosController@searchProducto')->name('searchProducto');
 Route::get('/searchExperiencia', 'Admin\ExperienciasController@searchExperiencia')->
 name('searchExperiencia');
-//BUSCADOR pagina productores,productos,experiencias
 
+//BUSCADOR pagina productores,productos,experiencias searchProducto
 Route::get('/searchProductor','Web\PageController@searchProductor')->name('searchProductor');
+Route::get('/searchProducto','Web\PageController@searchProducto')->name('searchProducto');
+Route::get('/searchExperiencia','Web\PageController@searchProducto')->name('searchExperiencia');
 
 
 //ADMINISTRADOR

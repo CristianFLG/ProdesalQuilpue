@@ -58,7 +58,6 @@
                             @endforeach
                         </tbody>   
                     </table>        
-
                     {{ $productores->render() }}
                 </div>
             </div>
