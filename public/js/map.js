@@ -72,7 +72,7 @@ function coordenadas()
   }
   else
       {
-      if(eventos != null)
+      if(eventos != null)//eventos
         {
           for (var i = 0; i < eventos["data"].length; i++) 
               {
