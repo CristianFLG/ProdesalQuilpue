@@ -64,7 +64,7 @@ class PageController extends Controller
 	    public function searchProductor(Request $request)
     {
         $search = $request->get('search');
-        $productores = Productor::where('id_rubro','like','%'.$search.'%')->paginate();
+        $productores = Productor::where('id_rubro','like','%'.$search.'%')->with('imagen')->paginate();
 		$rubros = Rubro::get();
 		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
 		JavaScript::put([
