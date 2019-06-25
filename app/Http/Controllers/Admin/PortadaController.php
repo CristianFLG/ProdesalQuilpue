@@ -37,7 +37,7 @@ class PortadaController extends Controller
         //imagen
         if($request->file('image'))
         {
-            $path = Storage::disk('public')->put('store',  $request->file('image'));
+            $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
             $portada->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
