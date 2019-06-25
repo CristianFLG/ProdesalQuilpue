@@ -6,9 +6,7 @@
 		<div class="row">
 			@foreach($productor->imagen as $product)
 			<div class="col-md-5 col-sm-5" data-wow-delay="0.3s">	
-
-				<img src="{{ $product->url_img }}" class="img-responsive" style=" height:300px;">	
-				
+				<img src="{{ $product->url_img }}" class="img-responsive" style=" height:300px;">
        		</div>
 			@endforeach
 			<div class="col-md-6 col-sm-6" style="text-align: left;">
@@ -29,7 +27,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%"></div>
+	<br>
+	<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%">
+	</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">

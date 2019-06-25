@@ -24,7 +24,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('redes', 'Red Social') }}
-    {{ Form::text('redes', null, ['class' => 'form-control']) }}    
+    {{ Form::text('redes', 'https://www.facebook.com/', ['class' => 'form-control']) }}    
 </div>
 <div class="form-group">
     {{ Form::label('asociacion_id', 'Asociacion') }}
