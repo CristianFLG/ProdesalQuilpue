@@ -15,7 +15,6 @@ use Prodesal\Imagen;
 
 class ProductosController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -111,11 +110,9 @@ class ProductosController extends Controller
    public function NameProdcutor($id)//funcion para sacar el id del nombre, para el default del
     {
         $productos = Producto::find($id);
-
         foreach($productos->productors as $tabla){
            $result = $tabla;
         }
-
         return $result;
     }
     /**
@@ -133,6 +130,12 @@ class ProductosController extends Controller
         //imagen
          if($request->file('image'))
         {
+            foreach ($productor->imagens as $img) 
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                Imagen::find($img->id)->delete();
+            }
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
@@ -152,6 +155,13 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
+        $producto = Producto::find($id);
+        foreach ($producto->imagens as $img) 
+        {
+            $path = parse_url($img->url_img);
+            unlink(public_path($path['path']));
+            Imagen::find($img->id)->delete();
+        }
         $producto = Producto::find($id)->delete();
         return back()->with('info', 'Eliminado Correctamente');
     }

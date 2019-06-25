@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-
-		<title>Prodesal Quilpué</title>
-
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-
-		<!-- animate -->
-		<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-		<!-- font-awesome -->
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-		<!-- google font -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	</head>
-
-	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 	@extends('layouts.barra')
 	@section('content')
 		<!-- start home -->
@@ -153,8 +127,6 @@
 					@foreach($productores as $producor)
 							@foreach($producor->imagen as $i)
 							@endforeach
-
-							
 					<div class="col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.3s">						
 						<a href="{{ route('personas', $producor->id) }}"><img src="{{ $i->url_img }}" class="img-responsive" alt="team img" ></a>		
 						<h3>{{ $producor->nombre }}</h3>
@@ -180,11 +152,11 @@
 							<h2 class="wow bounce">Recibe nuestras novedades</h2>
 							<p class="wow fadeIn" data-wow-delay="0.6s">Participa en las ferias campesinas realizadas por el prodesal.</p>
 						</div>
-							<div class="col-md-4 col-sm-3"></div>
-							<div class="col-md-4 col-sm-2" ">
-								<h2 style="color:green;">Te esperamos, Revisa los eventos</h2>
+							<div class="col-md-3 col-sm-3"></div>
+							<div class="col-md-6 col-sm-2" style="color: #53D543;">
+								<h2> Te esperamos, <strong >Revisa los eventos</strong></h2>
 							</div>
-							<div class="col-md-4 col-sm-3"></div>
+							<div class="col-md-3 col-sm-3"></div>
 					</div>
 				</div>
 			</div>
@@ -263,7 +235,6 @@
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="iso-box-wrapper col4-iso-box">
-
                				 			@foreach($experiencias as $exper)
                				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
                				 				<div class="portfolio-thumb">
@@ -293,8 +264,5 @@
 			<div id="map-canvas"></div>
 		</div>
 		<!-- end google map -->
-		
 		@endsection			
 		@include('footer');
-	</body>
-</html>

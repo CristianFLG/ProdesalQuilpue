@@ -33,24 +33,22 @@ class EventosController extends Controller
     {
         $eventos = Evento::create($request->all()); 
         //imagen
-        
-            if($request->file('image'))
-            {
-                $path = Storage::disk('public')->put('image',  $request->file('image'));
-                $imagen = new Imagen;
-                $imagen->fill(['url_img' => asset($path)])->save();
-                $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
-            }
-        
+     
+        if($request->file('image'))
+        {
+            $path = Storage::disk('public')->put('image',  $request->file('image'));
+            $imagen = new Imagen;
+            $imagen->fill(['url_img' => asset($path)])->save();
+            $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
+        }
         return redirect()->route('eventos.index', $eventos->id)
         ->with('info','Evento Creada con éxito !!');
 	}
 
 	 public function show($id)
     {
-        $evento = Evento::find($id); 
-        $imagen = Evento::with('imagens')->paginate();
-        return view('Admin.eventos.show', compact('evento','imagen'));
+        $evento = Evento::with('imagens')->find($id); 
+        return view('Admin.eventos.show', compact('evento'));
     }
 
     public function edit($id)
@@ -68,6 +66,12 @@ class EventosController extends Controller
         //imagen        
           if($request->file('image'))
         {
+            foreach ($evento->imagens as $img) 
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+            }
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
@@ -79,6 +83,14 @@ class EventosController extends Controller
 
     public function destroy($id)
     {
+        $evento = Evento::find($id);
+        foreach ($evento->imagens as $img) 
+        {
+            $path = parse_url($img->url_img);
+            unlink(public_path($path['path']));
+            $imagen = Imagen::find($img->id)->delete();
+        }
+
         $evento = Evento::find($id)->delete();
 
         return back()->with('info', 'Eliminado Correctamente');   

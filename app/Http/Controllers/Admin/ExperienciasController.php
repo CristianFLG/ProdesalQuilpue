@@ -129,6 +129,12 @@ class ExperienciasController extends Controller
         //imagen
         if($request->file('image'))
         {
+            foreach($experiencia->imagenes as $img)//eliminar archivo antiguo
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+            }
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
@@ -148,6 +154,13 @@ class ExperienciasController extends Controller
      */
     public function destroy($id)
     {
+        $experiencia = Experiencia::find($id);
+        foreach($experiencia->imagenes as $img)//eliminar archivo antiguo
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+            }
         $experiencia = Experiencia::find($id)->delete();
         return back()->with('info', 'Eliminado Correctamente');
     }

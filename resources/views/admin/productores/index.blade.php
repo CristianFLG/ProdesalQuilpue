@@ -7,7 +7,7 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-sm-8">
-                    <strong>Lista de Productores</strong>
+                    <strong>Productores</strong>
                     <a href="{{ route('productores.create') }}"   class="btn  btn-primary">
                         <i class="fa fa-plus" aria-hidden="true" data-toggle="tooltip" title="Agregar Nuevo Productor"></i>
                     </a>
@@ -29,7 +29,8 @@
                                 <th>Rut</th>
                                 <th>Telefono</th>
                                 <th >Lugar</th>
-                                <th colspan="3">&nbsp;</th>
+                                <th>Agregar</th>
+                                <th colspan="2">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,7 +43,7 @@
                                 <td>{{ $productor->lugar }}</td>
                                 
                                 <td width="10px">
-                                    <a href="{{ route('productores.show', $productor->id) }}"  class="btn btn-sm btn-default">Ver Todo</a>
+                                    <a href="{{ route('productores.show', $productor->id) }}"  class="btn btn-sm btn-default">Productos o Experiencias</a>
                                 </td>
                                  <td width="10px">
                                     <a href="{{ route('productores.edit', $productor->id) }}" class="btn btn-sm btn-default">Editar</a>

@@ -2,7 +2,7 @@
     {{ Form::label('id_capitalcult', 'Capital Cultural') }}
     {{ Form::select('id_capitalcult', $capital, 'No pertenece', ['class' => 'form-control'])}}
 </div>
-<div class="form-group">
+<div class="form-group" >
     {{ Form::label('id_rubro', 'Rubro') }}
     {{ Form::select('id_rubro', $rubro, 'Nn', ['class' => 'form-control'])}}
 </div>
@@ -21,6 +21,10 @@
 <div class="form-group">
     {{ Form::label('lugar', 'Localidad') }}
     {{ Form::text('lugar', null, ['class' => 'form-control']) }}
+</div>
+<div class="form-group">
+    {{ Form::label('redes', 'Red Social') }}
+    {{ Form::text('redes', null, ['class' => 'form-control']) }}    
 </div>
 <div class="form-group">
     {{ Form::label('asociacion_id', 'Asociacion') }}

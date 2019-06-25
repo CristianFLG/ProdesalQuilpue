@@ -19,7 +19,7 @@ class CreateProductorsTable extends Migration
             $table->integer('id_rubro')->unsigned();
             $table->string('nombre', 100);
             $table->string('rut',20);
-            $table->integer('telefono')->length(10)->unsigned();
+            $table->integer('telefono')->length(10)->nullable();
             $table->string('lugar')->nullable();
             $table->string('redes')->nullable();
             $table->double('lat',15,8)->nullable();

@@ -3,27 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/imgareaselect.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/imagen.css') }}" rel="stylesheet">
-
 </head>
 <body>
     <div id="app">
@@ -31,8 +24,7 @@
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li  class="nav-item">
-                            
+                        <li  class="nav-item">          
                         </li>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -48,7 +40,7 @@
                                 @endif
                             </li>
                         @else
-                        <li class="nav-item"><a class="nav-link" href="/admin">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/admin">Inicio</a></li>
                             <li><a  class="nav-link" href="{{ route('productores.index') }}">Productores</a></li>
                             <li><a  class="nav-link" href="{{ route('productos.index') }}">Productos</a></li>
                             <li><a  class="nav-link" href="{{ route('experiencias.index') }}">Experiencias</a></li>
@@ -92,7 +84,6 @@
                 </div>
             </div>
         @endif
-
         @if(count($errors))            
             <div class="container">
                 <div class="row">

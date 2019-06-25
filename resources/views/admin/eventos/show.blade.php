@@ -15,10 +15,10 @@
                     <p><strong>Ubicación: </strong> {{ $evento->ubicacion }}</p>
                     <p><strong>Fecha de Inicio: </strong> {{ $evento->fecha_ini }}</p>
                     <p><strong>Fecha de Termino: </strong> {{ $evento->fecha_ter }}</p>
-                     @foreach($imagen as $img)
-                        @foreach($img->imagens as $i)
-                            <img src="{{ $i->url_img }}" class="img-fluid" height="50%" width="50%">
-                        @endforeach
+                    @foreach($evento->imagens as $img)
+                        
+                        <img src="{{ $img->url_img }}" class="img-fluid" height="50%" width="50%">
+                        
                     @endforeach
                 </div>
 

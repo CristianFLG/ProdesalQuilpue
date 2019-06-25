@@ -21,7 +21,7 @@
 				<h4>Numero de Contacto: {{ $productor->telefono }}</h4>
 				<h4>Ubicación: {{ $productor->lugar }}</h4>
 				<ul class="social-icon text-left" >
-           			<li><a href="#" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
+           			<li><a href="{{ $productor->redes }}" class="wow fadeInUp fa fa-facebook" data-wow-delay="2s"></a></li>
           			<li><a href="#" class="wow fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
           			<li><a href="#" class="wow fadeIn fa fa-instagram" data-wow-delay="2s"></a></li>
        			</ul>

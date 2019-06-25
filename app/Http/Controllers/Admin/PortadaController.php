@@ -60,7 +60,7 @@ class PortadaController extends Controller
 
     public function edit($id)
     {
-        $portada = Imagen::find($id);   
+        $portada = Portada::find($id);   
         return view('admin.portadas.edit', compact('portada'));
     }
 
@@ -71,8 +71,14 @@ class PortadaController extends Controller
         $portada = Portada::find($id);
         $portada->fill($request->all())->save();
         //imagen
-          if($request->file('image'))
+        if($request->file('image'))
         {
+            foreach($portada->imagens as $img)//eliminar archivo antiguo
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+            }
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
@@ -84,6 +90,13 @@ class PortadaController extends Controller
 
     public function destroy($id)
     {
+        $portada = Portada::find($id);
+        foreach($portada->imagens as $img)//eliminar archivo antiguo
+        {
+            $path = parse_url($img->url_img);
+            unlink(public_path($path['path']));
+            $imagen = Imagen::find($img->id)->delete();
+        }
         $imagen = Portada::find($id)->delete();
 
         return back()->with('info', 'Eliminado Correctamente');   

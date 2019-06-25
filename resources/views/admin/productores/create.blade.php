@@ -7,10 +7,10 @@
         <div class="fondo-form col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   <strong>Crear Productor</strong>
+                   <strong>Crear nuevo Productor</strong>
                 </div>
                 <br>
-                <div class="panel-body">
+                <div class="panel-body" >
                     {!! Form::open(['route' => 'productores.store','files' => true]) !!}
                         
                         @include('admin.productores.partial.form')

@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use Prodesal\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Prodesal\Http\Requests\ProductorStoreRequest;
+use Illuminate\Support\Facades\File;
 use Prodesal\Productor;
+use Prodesal\Producto;
+use Prodesal\Experiencia;
 use Prodesal\Imagen;
 use Prodesal\Capitalcultural;
 use Prodesal\Asociacion;
@@ -60,8 +63,8 @@ class ProductoresController extends Controller
     public function store(ProductorStoreRequest $request)
     {
         $productores = Productor::create($request->all()); 
-        //imagen
         $productores->asociaciones()->attach($request->get('asociacion_id'));   
+        //imagen
         if($request->file('image'))
         {
             $path = Storage::disk('public')->put('image',  $request->file('image'));
@@ -98,7 +101,8 @@ class ProductoresController extends Controller
         $capital = Capitalcultural::orderBy('id')->pluck('nombre_capital','id');
         $asociaciones = Asociacion::orderBy('id')->pluck('nombre','id');
         $rubro = Rubro::orderBy('id')->pluck('nombre_rubro','id');
-        $defaultcap = Asociacion::with('productores');   
+        $defaultcap = Asociacion::with('productores'); 
+
         return view('admin.productores.edit', compact('productor','capital','asociaciones','rubro'));
     }
 
@@ -116,8 +120,15 @@ class ProductoresController extends Controller
         $productor->fill($request->all())->save();
         //imagen
         $productor->asociaciones()->sync($request->get('asociacion_id')); 
+ 
         if($request->file('image'))
         {
+            foreach ($productor->imagen as $img) 
+            {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+            }
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $imagen = new Imagen;
             $imagen->fill(['url_img' => asset($path)])->save();
@@ -134,8 +145,50 @@ class ProductoresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $productor = Productor::find($id)->delete();
+    {   
+
+        $productor = Productor::find($id);
+        //productos
+        foreach ($productor->productos as $prod) 
+        {
+            $product = Producto::find($prod->id);
+            foreach ($product->imagens as $img) 
+            {   
+                $path = parse_url($img->url_img);
+                if(is_file(public_path($path['path'])))
+                {
+                    unlink(public_path($path['path']));
+                    $imagen = Imagen::find($img->id)->delete();    
+                }                 
+            }
+           $product = Producto::find($prod->id)->delete();
+        }
+
+        //Experiencias
+        
+        foreach ($productor->experiencias as $exp) 
+        {
+            $experienc = Experiencia::find($exp->id);
+            foreach ($experienc->imagenes as $img) 
+            {
+                $path = parse_url($img->url_img);
+                if(is_file(public_path($path['path'])))
+                {
+                    unlink(public_path($path['path']));
+                    $imagen = Imagen::find($img->id)->delete();    
+                } 
+            }
+            $experienc = Experiencia::find($exp->id)->delete();
+        } 
+
+        //Imagen de productor
+        foreach ($productor->imagen as $img) 
+        {
+                $path = parse_url($img->url_img);
+                unlink(public_path($path['path']));
+                $imagen = Imagen::find($img->id)->delete();
+        }
+            $productor = Productor::find($id)->delete();       
         return back()->with('info', 'Eliminado Correctamente');     
     }
 }

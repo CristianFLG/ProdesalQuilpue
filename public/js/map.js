@@ -13,6 +13,7 @@ function initialize()
       mapTypeId: google.maps.MapTypeId.HYBRID  
     };
    
+
     map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
 
     google.maps.event.addDomListener(map, 'idle', function() {
@@ -33,6 +34,11 @@ function coordenadas()
 
     var markers = [];
     var infoWindowContent = [];
+    function coordenadas(position) {
+            latitud = position.coords.latitude; /*Guardamos nuestra latitud*/
+            longitud = position.coords.longitude; /*Guardamos nuestra longitud*/
+            cargarMapa();
+        }
   if(productores != null)
   {
     for (var i = 0; i < productores["data"].length; i++) 
@@ -41,10 +47,11 @@ function coordenadas()
       {  
         for (var r = 0; r < rubros.length; r++) 
         {
-          markers[i] = [
-          productores.data[i].nombre, 
-          productores.data[i].lat, 
-          productores.data[i].lon
+          markers[i] = 
+          [
+            productores.data[i].nombre, 
+            productores.data[i].lat, 
+            productores.data[i].lon
           ]
         if(rubros[r].id == productores.data[i].id_rubro)
           {

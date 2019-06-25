@@ -3,8 +3,9 @@
 @section('content')			
 	<div id="evento">
 		<div class="container">
+			@foreach($eventos as $evento)
 			<div class="row">			
-				@foreach($eventos as $evento)
+				
 					<div class="col-md-12 col-sm-5 wow fadeIn" data-wow-delay="0.9s">
 						<h3>{{ $evento->titulo }}</h3>
 						<p><i class="fa fa-map-marker too-icon"></i> {{ $evento->ubicacion }}</p>
@@ -19,11 +20,11 @@
 						</div>
 							<div class="col-md-3 col-sm-7 wow fadeIn" data-wow-delay="0.3s">
 						</div>
-					@endforeach	
-				@endforeach			
+					@endforeach		
 			</div>
 			<hr class="style3">
-				{{ $eventos->render() }}
+			@endforeach
+			{{ $eventos->render() }}
 		</div>
 	</div>
 	<div class="google_map">

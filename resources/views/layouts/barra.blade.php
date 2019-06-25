@@ -2,15 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-
 		<title>Prodesal Quilpué</title>
-
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-
 		<!-- animate -->
 		<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
 		<!-- bootstrap -->
@@ -21,7 +18,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 		<!-- start navigation -->
