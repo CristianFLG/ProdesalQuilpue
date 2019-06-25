@@ -11,7 +11,7 @@
 				        			<li>
 				        				<img src="{{ asset($img->url_img) }}">
 				        			<div class="slider-caption">
-				        				<h1>Bienvenidos</h1>
+				        				<h1><mark><b>Bienvenidos</b></mark></h1>
 				        			</div>
 				        			</li>
 			        			@endforeach
@@ -62,6 +62,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
@@ -85,6 +86,7 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-md-4 col-sm-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.8s">
@@ -150,11 +152,11 @@
 					<div class="col-md-12">
 						<div class="title">
 							<h2 class="wow bounce">Recibe nuestras novedades</h2>
-							<p class="wow fadeIn" data-wow-delay="0.6s">Participa en las ferias campesinas realizadas por el prodesal.</p>
+							<p class="wow fadeIn" data-wow-delay="0.6s">Participa en las ferias campesinas realizadas por el  <b> Prodesal</b></p>
 						</div>
 							<div class="col-md-3 col-sm-3"></div>
-							<div class="col-md-6 col-sm-2" style="color: #53D543;">
-								<h2> Te esperamos, <strong >Revisa los eventos</strong></h2>
+							<div class="col-md-6 col-sm-2"   data-wow-delay="0.6s">
+								<h2 class="wow bounce"> Te esperamos, <span style="color: #93ca3a;">revisa los eventos</span> para mayor información</h2>
 							</div>
 							<div class="col-md-3 col-sm-3"></div>
 					</div>

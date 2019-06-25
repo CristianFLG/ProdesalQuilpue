@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- google font -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
