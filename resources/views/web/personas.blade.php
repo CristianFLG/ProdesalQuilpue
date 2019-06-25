@@ -30,6 +30,7 @@
 	<br>
 	<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%">
 	</div>
+	<br>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -56,6 +57,7 @@
 				</div>
 			</div>
 			<hr class="style3">
+			<br>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
