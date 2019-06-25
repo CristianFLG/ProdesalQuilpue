@@ -67,6 +67,10 @@ class PageController extends Controller
         $productores = Productor::where('id_rubro','like','%'.$search.'%')->paginate();
 		$rubros = Rubro::get();
 		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
+		JavaScript::put([
+			'productores' => $productores,
+			'rubros' => $rubros
+		]);
         return view('web.todoproductores',compact('productores','rubros','listarubro'));
     }
 //Todos los productores
