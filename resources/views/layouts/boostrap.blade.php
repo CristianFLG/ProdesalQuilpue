@@ -172,7 +172,6 @@
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="iso-box-wrapper col4-iso-box">
-
                				 			@foreach($productos as $procut)
                				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
                				 				<div class="portfolio-thumb">
