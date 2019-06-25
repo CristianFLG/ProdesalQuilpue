@@ -48,13 +48,13 @@ class EventosController extends Controller
 	 public function show($id)
     {
         $evento = Evento::with('imagens')->find($id); 
-        return view('Admin.eventos.show', compact('evento'));
+        return view('admin.eventos.show', compact('evento'));
     }
 
     public function edit($id)
     {
         $evento = Evento::find($id);   
-        return view('Admin.eventos.edit', compact('evento'));
+        return view('admin.eventos.edit', compact('evento'));
     }
 
 
