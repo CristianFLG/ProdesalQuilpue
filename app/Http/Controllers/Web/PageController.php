@@ -23,8 +23,10 @@ class PageController extends Controller
 		$rubros = Rubro::get();
 		$productos = Producto::with('imagens','productors')->paginate(3);
 		$experiencias = Experiencia::with('imagenes','productores')->paginate(3);
+		//JAVA solo javascript
+		$product = Productor::with('imagen')->paginate();
 		JavaScript::put([
-			'productores' => $productores,
+			'productores' => $product,
 			'rubros' => $rubros
 		]);
 		return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
