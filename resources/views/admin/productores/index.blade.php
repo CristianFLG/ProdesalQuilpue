@@ -43,7 +43,7 @@
                                 <td>{{ $productor->lugar }}</td>
                                 
                                 <td width="10px">
-                                    <a href="{{ route('productores.show', $productor->id) }}"  class="btn btn-sm btn-default">Productos o Experiencias</a>
+                                    <a href="{{ route('productores.show', $productor->id) }}"  class="btn btn-sm btn-default">Productos/Experiencias</a>
                                 </td>
                                  <td width="10px">
                                     <a href="{{ route('productores.edit', $productor->id) }}" class="btn btn-sm btn-default">Editar</a>
