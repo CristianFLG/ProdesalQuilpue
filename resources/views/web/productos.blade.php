@@ -34,6 +34,7 @@
 
                				 			
 										@foreach($producto_rubro as $relation)
+										@if($relation->id != $productos->id)
                				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
                				 				<div class="portfolio-thumb">
 
@@ -46,6 +47,7 @@
                				 					<h4>{{ $relation->nombre_producto }}/{{ $relation->derivado }}</h4>
                				 				</div>
                				 			</div>
+               				 			@endif
                				 			@endforeach
                				 			
                				 		</div>

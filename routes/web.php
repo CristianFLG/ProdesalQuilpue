@@ -30,9 +30,9 @@ Route::get('/searchExperiencia', 'Admin\ExperienciasController@searchExperiencia
 name('searchExperiencia');
 
 //BUSCADOR pagina productores,productos,experiencias searchProducto
-Route::get('/searchProductors','Web\PageController@searchProductor')->name('searchProductors');
-Route::get('/searchProductos','Web\PageController@searchProducto')->name('searchProductos');
-Route::get('/searchExperiencias','Web\PageController@searchProducto')->name('searchExperiencias');
+Route::get('/searchProductors','Web\PageController@searchProductors')->name('searchProductors');
+Route::get('/searchProductos','Web\PageController@searchProductos')->name('searchProductos');
+Route::get('/searchExperiencias','Web\PageController@searchProductos')->name('searchExperiencias');
 
 
 //ADMINISTRADOR
