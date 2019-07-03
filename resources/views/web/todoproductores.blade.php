@@ -4,7 +4,7 @@
 		<div id="team">
 			<div class="container">
 				<div class="row">
-					{!! Form::open(['route' => 'searchProductor', 'method' => 'GET', 'class' => 'form-inline'])  !!}
+					{!! Form::open(['route' => 'searchProductors', 'method' => 'GET', 'class' => 'form-inline'])  !!}
 
                         {!! Form::select('search',$listarubro,null, ['class' => 'form-control']) !!}
 

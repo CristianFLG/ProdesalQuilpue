@@ -63,7 +63,7 @@ class PageController extends Controller
 		return view('web.experiencias',compact('experiencias','experiencia'));
 	}
 //Buscar de todos los productores
-	    public function searchProductor(Request $request)
+	    public function searchProductors(Request $request)
     {
         $search = $request->get('search');
         $productores = Productor::where('id_rubro','like','%'.$search.'%')->with('imagen')->paginate();
@@ -91,7 +91,7 @@ class PageController extends Controller
 	}
 
 
-  public function searchExperiencia(Request $request)
+  public function searchExperiencias(Request $request)
     {
     	$experiencias = Experiencia::where('nombre_exper','like','%'.$search.'%')->paginate();
        return view('web.todoexperiencias',compact('experiencias'));
@@ -103,7 +103,7 @@ class PageController extends Controller
 		return view('web.todoexperiencias',compact('experiencias'));
 	}
 	//Buscar de todos los productores
-	    public function searchProducto(Request $request)
+	    public function searchProductos(Request $request)
     {
         $search = $request->get('search');
         $productos = Producto::where('nombre_producto','like','%'.$search.'%')->paginate();
