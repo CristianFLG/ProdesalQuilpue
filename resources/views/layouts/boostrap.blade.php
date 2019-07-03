@@ -139,7 +139,9 @@
 						@endforeach
 					</div>	
 					@endforeach
+					<span class="hidden">
 					{{ $productores->render() }}
+					</span>
 				</div>
 			</div>
 		</div>
@@ -190,7 +192,9 @@
                				 				</div>
                				 			</div>
                				 			@endforeach
-               				 			{{ $productos->render() }}
+               				 			<span class="hidden">
+               				 				{{ $productos->render() }}
+               				 			</span>
                				 		</div>
                				 	</div>
 							</div>
@@ -252,7 +256,9 @@
                				 				</div>
                				 			</div>
                				 			@endforeach
-               				 			{{ $experiencias->render() }}
+               				 			<span class="hidden">
+               				 				{{ $experiencias->render() }}
+               				 			</span>	
                				 		</div>
                				 	</div>
 							</div>
