@@ -13,7 +13,7 @@
                 <div class="panel-body">
                     {!! Form::open(['route' => 'eventos.store','files' => true]) !!}
                         
-                        @include('Admin.eventos.partial.form')
+                        @include('admin.eventos.partial.form')
 
                     {!! Form::close() !!}
                 </div>
