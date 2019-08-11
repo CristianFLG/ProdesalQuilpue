@@ -124,7 +124,6 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="wow bounce">Su Gente</h2>
 					</div>
 					@foreach($productores as $producor)
 							@foreach($producor->imagen as $i)
@@ -134,7 +133,7 @@
 						<h3>{{ $producor->nombre }}</h3>
 						@foreach($rubros as $rub)
 							@if ($producor->id_rubro == $rub->id)
-								<b>Productor de:<p> {{ $rub->nombre_rubro }}</p></b>
+								<b>Agricultor de:<p> {{ $rub->nombre_rubro }}</p></b>
 							@endif
 						@endforeach
 					</div>	
@@ -172,7 +171,6 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="wow bounce">Los Frutos de la Zona</h2>
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="iso-box-wrapper col4-iso-box">
@@ -236,7 +234,6 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="wow bounce">Experiencias de la Zona</h2>
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="iso-box-wrapper col4-iso-box">
@@ -266,6 +263,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="division"> </div>
 		<!-- start google map -->
 		<div class="google_map">
 			<div id="map-canvas"></div>

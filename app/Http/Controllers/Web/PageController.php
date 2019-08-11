@@ -107,6 +107,7 @@ class PageController extends Controller
     {
         $search = $request->get('search');
         $productos = Producto::where('nombre_producto','like','%'.$search.'%')->paginate();
+        dd($productos);
         return view('web.todoproductos',compact('productos'));
     }
 	public function productos()
