@@ -152,7 +152,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="title">
-							<h2 class="wow bounce">Busca nuestras novedades</h2>
+							<h2 class="wow bounce">Revisa nuestras novedades</h2>
 							<p class="wow fadeIn" data-wow-delay="0.6s">Participa en las ferias campesinas realizadas por el  <b> Prodesal</b></p>
 						</div>
 							<div class="col-md-3 col-sm-3"></div>
