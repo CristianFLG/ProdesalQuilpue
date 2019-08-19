@@ -19,7 +19,7 @@ body
 
 .division{
     padding:50px 0px 0px 0px;
-    background-color: #2F3C32;
+    background-color: #171A17;
 }
 h2, h3, h4
     {
@@ -508,13 +508,13 @@ box-shadow: 0px 0px 13px #1a690a;
     overflow: hidden;
 }
 .fluid-img {
-        display: inline-block;
-        transition: all 0.4s ease-in;
-        height: 300px;
-        width: 320px;
-     -moz-box-shadow: 0px 0px 13px #1a690a;
--webkit-box-shadow: 0px 0px 13px #1a690a;
-box-shadow: 0px 0px 13px #1a690a;
+    display: inline-block;
+    transition: all 0.4s ease-in;
+    height: 300px;
+    width: 320px;
+    -moz-box-shadow: 0px 0px 13px #1a690a;
+    -webkit-box-shadow: 0px 0px 13px #1a690a;
+    box-shadow: 0px 0px 13px #1a690a;
 }
 /* end portfolio */
 

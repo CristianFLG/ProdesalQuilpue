@@ -27,19 +27,8 @@
 		<div id="service">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
-								<i class="fa fa-envira"></i>
-							</div>
-							<div class="media-body wow fadeIn">
-								<h3 class="media-heading">Experiencias</h3>
-								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en Colliguay.</p>
-							</div>
-						</div>
-					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
 								<i class="fa fa-group"></i>
@@ -51,7 +40,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
 								<i class="fa fa-shopping-cart"></i>
@@ -63,19 +52,19 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-4">
 						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
-								<i class="fa fa-handshake-o"></i>
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
+								<i class="fa fa-envira"></i>
 							</div>
-							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
-								<h3 class="media-heading">INDAP</h3>
-								<p>Pretende terminar con la pobreza rural, generando políticas de desarrollo sustentable al campesinado.</p>
+							<div class="media-body wow fadeIn">
+								<h3 class="media-heading">Experiencias</h3>
+								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en Colliguay.</p>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-4">
 						<div class="media">
 							<div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
 								<i class="fa fa-flag"></i>
@@ -87,18 +76,29 @@
 						</div>
 					</div>
 					
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-4">
 						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.8s">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
 								<i class="fa fa-info"></i>
 							</div>
 							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
-								<h3 class="media-heading">Eventos </h3>
+								<h3 class="media-heading">Eventos</h3>
 								<p>se realizan eventos por INDAP para los pequeños agricultores de colliguay puedan acercarce al publico.</p>
 							</div>
 						</div>
 					</div>
-
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
+								<i class="fa fa-handshake-o"></i>
+							</div>
+							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
+								<h3 class="media-heading">INDAP</h3>
+								<p>Pretende terminar con la pobreza rural, generando políticas de desarrollo sustentable al campesinado.</p>
+							</div>
+						</div>
+					</div>
+										
 				</div>
 			</div>
 		</div>
@@ -152,7 +152,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="title">
-							<h2 class="wow bounce">Recibe nuestras novedades</h2>
+							<h2 class="wow bounce">Busca nuestras novedades</h2>
 							<p class="wow fadeIn" data-wow-delay="0.6s">Participa en las ferias campesinas realizadas por el  <b> Prodesal</b></p>
 						</div>
 							<div class="col-md-3 col-sm-3"></div>
