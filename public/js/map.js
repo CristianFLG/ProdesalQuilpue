@@ -66,8 +66,8 @@ function coordenadas()
                             '<h4><a href="../personas/'+productores.data[i].id+'">'+productores.data[i].nombre+'</a></h4>' +
 
                             '<h4>'+rubros[r].nombre_rubro+'</h4>'+
-                            '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+productores.data[i].lat+'%2C'+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Waze</a>'+
-                            ' o <a href="https://www.google.es/maps?q='+productores.data[i].lat+','+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Map</a></p>'+
+                            '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+productores.data[i].lat+'%2C'+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank"><b>Waze</b></a>'+
+                            ' o <a href="https://www.google.es/maps?q='+productores.data[i].lat+','+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank"><b>Map</b></a></p>'+
                             '</div>'
                         ]
                     }
@@ -97,8 +97,8 @@ function coordenadas()
                         '</div>'+
                         '<div class="info_content col-sm-8">' +
                         '<h4>'+eventos.data[i].titulo+'</h4>' +   
-                        '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+eventos.data[i].lat+'%2C'+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Waze</a>'+
-                        ' o <a href="https://www.google.es/maps?q='+eventos.data[i].lat+','+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Map</a></p>'+
+                        '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+eventos.data[i].lat+'%2C'+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank"><b>Waze</b></a>'+
+                        ' o <a href="https://www.google.es/maps?q='+eventos.data[i].lat+','+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank"><b>Map</b></a></p>'+
                         '</div>'
                     ]
                 }

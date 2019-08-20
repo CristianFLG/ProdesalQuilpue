@@ -27,6 +27,7 @@
 			{{ $eventos->render() }}
 		</div>
 	</div>
+	<div class="division"> </div>
 	<div class="google_map">
 		<div id="map-canvas"></div>
 	</div>

@@ -85,8 +85,8 @@
 				</div>
 			</div>	
 		
-</div>
-<hr class="style3">
+		</div>
+		<div class="division"> </div>		
 		<div class="google_map">
 			<div id="map-canvas"></div>
 		</div>
