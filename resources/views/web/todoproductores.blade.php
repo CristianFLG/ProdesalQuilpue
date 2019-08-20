@@ -33,7 +33,7 @@
 															</h4>
 														@endif
 													@endforeach
-													<h4>{{ $producor->lugar }}</h4>
+													<p><b>{{ $producor->lugar }}</b></p>
 													</div>
 												</div>	
 											@endforeach
