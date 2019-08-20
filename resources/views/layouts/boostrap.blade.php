@@ -185,7 +185,7 @@
                				 					<h4>{{ $procut->nombre_producto }}/{{ $procut->derivado }}</h4>
                				 					<a href="{{ route('detalle', $procut->id) }}" class="btn btn-success">Producto</a>
                				 					@foreach($procut->productors as $prod)
-               				 					<a href="{{ route('personas',$prod->id) }}" class="btn">Productor</a>
+               				 					<a href="{{ route('personas',$prod->id) }}" class="btn"><b>Productor</b></a>
                				 					@endforeach
                				 				</div>
                				 			</div>
@@ -248,7 +248,7 @@
                				 					<h4>{{ $exper->nombre_exper }}</h4>
                				 					<a href="{{ route('detallexper',$exper->id) }}" class="btn btn-warning">Experiencia</a>
                				 					@foreach($exper->productores as $produ)
-               				 					<a href="{{ route('personas',$produ->id) }}" class="btn">Productor</a>
+               				 					<a href="{{ route('personas',$produ->id) }}" class="btn"><b>Productor</b></a>
                				 					@endforeach
                				 				</div>
                				 			</div>

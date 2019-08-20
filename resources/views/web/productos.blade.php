@@ -27,15 +27,13 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="wow bounce">Relacionados</h2>
-							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
-               				 	<div class="iso-box-section">
-               				 		<div class="iso-box-wrapper col4-iso-box">
-
+						<h2>Relacionados</h2>
+               				 	<div class="iso-box-section" data-wow-delay="0.6s">
+               				 		<div class="iso-box-wrapper">
                				 			
 										@foreach($producto_rubro as $relation)
 										@if($relation->id != $productos->id)
-               				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
+               				 			<div class="iso-box col-md-4 col-sm-6 col-xs-12">	
                				 				<div class="portfolio-thumb">
 
                				 					@foreach($relation->imagens as $img)

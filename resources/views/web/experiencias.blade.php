@@ -26,13 +26,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="wow bounce">Experiencias de la Zona</h2>
-							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
+						<h2>Experiencias de la Zona</h2>
+							<div class="iso-section" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
-               				 		<div class="iso-box-wrapper col4-iso-box">
-
+               				 		<div class="iso-box-wrapper">
                				 			@foreach($experiencia as $exper)
-               				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
+               				 			<div class="iso-box col-md-4 col-sm-6 col-xs-12">	
                				 				<div class="portfolio-thumb">
                				 					@foreach($exper->imagenes as $phot)
                				 					<img src="{{ $phot->url_img }}" class="fluid-img" alt="portfolio img">
