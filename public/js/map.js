@@ -68,7 +68,6 @@ function coordenadas()
                             '<h4>'+rubros[r].nombre_rubro+'</h4>'+
                             '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+productores.data[i].lat+'%2C'+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Waze</a>'+
                             ' o <a href="https://www.google.es/maps?q='+productores.data[i].lat+','+productores.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Map</a></p>'+
-
                             '</div>'
                         ]
                     }
@@ -97,7 +96,9 @@ function coordenadas()
                         '<p><img src="'+eventos.data[i]['imagens'][j].url_img+'" width="80px" height="80px"></p>' + 
                         '</div>'+
                         '<div class="info_content col-sm-8">' +
-                        '<h4>'+eventos.data[i].titulo+'</h4>' +                      
+                        '<h4>'+eventos.data[i].titulo+'</h4>' +   
+                        '<p>Abrir en: <a href="https://www.waze.com/ul?ll='+eventos.data[i].lat+'%2C'+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Waze</a>'+
+                        ' o <a href="https://www.google.es/maps?q='+eventos.data[i].lat+','+eventos.data[i].lon+'&navigate=yes&zoom=17" target="_blank">Map</a></p>'+
                         '</div>'
                     ]
                 }
@@ -113,7 +114,6 @@ function coordenadas()
     {
         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
         bounds.extend(position);
-        console.log(productor)
         if(productor!=null)
         {
             if(productor.nombre == markers[i][0])

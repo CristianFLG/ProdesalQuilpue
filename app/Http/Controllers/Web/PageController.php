@@ -73,6 +73,7 @@ class PageController extends Controller
 		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
 		JavaScript::put(
 		[
+			'productor' => null,
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
@@ -125,6 +126,7 @@ class PageController extends Controller
 	{
 		$eventos = Evento::with('imagens')->paginate(2);
 		JavaScript::put([
+			'productor' => null,
 			'productores' => null,
 			'eventos' => $eventos
 		]);
