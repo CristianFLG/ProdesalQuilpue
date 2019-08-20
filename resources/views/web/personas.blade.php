@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="wow bounce">Productos</h2>
+						<h2 class="wow bounce">Sus Frutos</h2>
 						<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				<div class="iso-box-section">
                				 	<div class="iso-box-wrapper col4-iso-box">
