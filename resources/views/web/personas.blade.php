@@ -9,7 +9,7 @@
 				<img src="{{ $product->url_img }}" class="img-responsive" style=" height:300px;">
        		</div>
 			@endforeach
-			<div class="col-md-6 col-sm-6" style="text-align: left;">
+			<div class="col-md-7 col-sm-7" style="text-align: left;">
 				<h3>{{ $productor->nombre }}</h3>
 				@foreach($rubros as $rub)
 							@if ($productor->id_rubro == $rub->id)
