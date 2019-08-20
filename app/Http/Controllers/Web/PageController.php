@@ -26,6 +26,7 @@ class PageController extends Controller
 		//JAVA solo javascript
 		$product = Productor::with('imagen')->paginate();
 		JavaScript::put([
+			'productor' => null,
 			'productores' => $product,
 			'rubros' => $rubros
 		]);
@@ -38,6 +39,7 @@ class PageController extends Controller
 		$productores = Productor::with('imagen')->paginate();
 		$rubros = Rubro::get();
 		JavaScript::put([
+			'productor' =>$productor,
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
@@ -69,7 +71,8 @@ class PageController extends Controller
         $productores = Productor::where('id_rubro','like','%'.$search.'%')->with('imagen')->paginate();
 		$rubros = Rubro::get();
 		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
-		JavaScript::put([
+		JavaScript::put(
+		[
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
@@ -83,6 +86,7 @@ class PageController extends Controller
 		$listarubro = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
 
 		JavaScript::put([
+			'productor' => null,
 			'productores' => $productores,
 			'rubros' => $rubros
 		]);
