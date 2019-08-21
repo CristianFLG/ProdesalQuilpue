@@ -28,9 +28,9 @@
 													<h3>{{ $producor->nombre }}</h3>
 													@foreach($rubros as $rub)
 														@if ($producor->id_rubro == $rub->id)
-															<h4>
+															<p><b>
 																Tipo de Productos: {{ $rub->nombre_rubro }}
-															</h4>
+															</b></p>
 														@endif
 													@endforeach
 													<p><b>{{ $producor->lugar }}</b></p>

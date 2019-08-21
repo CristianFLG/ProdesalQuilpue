@@ -17,7 +17,7 @@
 							@endif
 				@endforeach
 				<h4>Numero de Contacto: {{ $productor->telefono }}</h4>
-				<h4>Ubicación: {{ $productor->lugar }}</h4>
+				<p><b>Ubicación: {{ $productor->lugar }}</b></p>
 				<ul class="social-icon text-left" >
            			<li><a href="{{ $productor->redes }}" class="fa fa-facebook" data-wow-delay="2s"></a></li>
           			<li><a href="#" class=" fadeInDown fa fa-twitter" data-wow-delay="2s"></a></li>
