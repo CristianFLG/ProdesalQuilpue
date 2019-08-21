@@ -133,7 +133,7 @@
 						<h3>{{ $producor->nombre }}</h3>
 						@foreach($rubros as $rub)
 							@if ($producor->id_rubro == $rub->id)
-								<b>Agricultor de:<p> {{ $rub->nombre_rubro }}</p></b>
+								<b style="font-size: 16px;">Agricultor de:<p> {{ $rub->nombre_rubro }}</p></b>
 							@endif
 						@endforeach
 					</div>	
