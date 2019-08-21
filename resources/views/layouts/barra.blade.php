@@ -60,7 +60,7 @@
 				<div class="row">
 					<div class="col-md-8 col-sm-7">
 						<p>Copyright &copy; 2018 Universidad Playa Ancha</p>
-						<small>Diseñada por<a rel="nofollow" href="http://www.tooplate.com" target="_parent"> Cristian Flores Gallardo</a></small>
+						<small>Diseñada por<a rel="nofollow" href="#" target="_parent"> Cristian Flores Gallardo</a></small>
 					</div>
 					<div class="col-md-4 col-sm-5">
 						<ul class="social-icon">
@@ -73,21 +73,6 @@
 							<li>
 								<a href="https://www.instagram.com/indapchile/" class="fa fa-instagram"></a>
 							</li>
-							@guest
-							<li><a href="/login" class="smoothScroll">LOGIN</a></li>
-							@else
-							<li><a href="/admin" class="smoothScroll">ADMINISTRAR</a></li>
-	    					<li>
-	                            <a class="dropdown-item" href="{{ route('logout') }}"
-	                            onclick="event.preventDefault();
-	                            document.getElementById('logout-form').submit();">
-	                            {{ __('LOGOUT') }}
-	                            </a>
-	                               	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-	                                    @csrf
-	                               	</form>
-	                    	@endguest
-	                        </li>
 						</ul>
 					</div>
 				</div>

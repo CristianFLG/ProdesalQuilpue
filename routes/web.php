@@ -11,7 +11,6 @@ Route::get('/personas/{id}','Web\PageController@personas')->name('personas');
 Route::get('/producto/{id}/detalle','Web\PageController@detalle')->name('detalle');
 Route::get('/experiencia/{id}/detalle','Web\PageController@experiencia')
 ->name('detallexper');
-Route::get('/prueba', 'Web\PageController@prueba')->name('prueba');
 
 
 //BARRA DE INICIO

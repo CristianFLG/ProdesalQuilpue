@@ -34,11 +34,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li class="nav-item">
+                           <!-- <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
                                 @endif
-                            </li>
+                            </li>-->
                         @else
                             <li class="nav-item"><a class="nav-link" href="/admin">Inicio</a></li>
                             <li><a  class="nav-link" href="{{ route('productores.index') }}">Productores</a></li>
