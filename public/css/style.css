@@ -9,13 +9,14 @@ body
 #titulo1{
     background-color:  #93ca3a;
     padding-top: 20px;
+    padding-bottom: 20px;
     margin-bottom:30px;
-        position: relative;
-        color: white;
-        -webkit-border-top-left-radius:0px;
--webkit-border-top-right-radius:75px;
--webkit-border-bottom-left-radius:75px;
--webkit-border-bottom-right-radius:0px;
+    position: relative;
+    color: white;
+    -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:75px;
+    -webkit-border-bottom-left-radius:75px;
+    -webkit-border-bottom-right-radius:0px;
 }
 
 .division{
@@ -27,6 +28,52 @@ body
     padding:50px 0px 50px 0px;
 
 }
+#service_sub{
+    margin-left:100px;
+}
+
+.block{
+    position: relative;
+    background-repeat:no-repeat;
+    height: 150px;
+    width:320px;
+    margin:10px 10px 10px 10px;
+}
+.titulo2{
+    margin-bottom:50px;
+}
+.block-1{
+    background-image:url('../images/camping.jpg');
+}
+.block-2{
+    background-image:url('../images/senderismo.jpg');
+}
+.block-3{
+    background-image:url('../images/cabalgata.jpg');
+}
+.block-4{
+    background-image:url('../images/festival.jpg');
+}
+.block-5{
+    background-image:url('../images/alojamiento.jpg');
+}
+.block-6{
+    background-image:url('../images/visitaguiada.jpg');
+}
+ .layer{
+    background-color: rgba(0, 108, 0, 0.4);    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    text-align: center;
+    color:white;
+ }
+
+
+
 h2, h3, h4
     {
         font-weight: bold;
@@ -53,6 +100,9 @@ hr.titulo{
 /* end all section */
 
 /* start nagivation */
+.barra{
+box-shadow: -2px 8px 22px #040504;
+}
 .navbar-default
     {
         background: #fff;
@@ -76,12 +126,7 @@ hr.titulo{
     {
         color: #93ca3a;
     }
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #93ca3a;
-  background-color: transparent;
-}
+
 .navbar-default .navbar-toggle
     {
         border: none;
@@ -118,7 +163,7 @@ hr.titulo{
 .flexslider .slides img {
   width: 100%;
   min-width: 648px;
-  max-height: 570px;
+  max-height: 369px;
   display: block;
 }
 .flexslider .slides > li {
@@ -154,48 +199,9 @@ hr.titulo{
       -ms-flex-align: center;
           align-items: center;
 }
-.flexslider .btn
-{
-    background: #93ca3a;
-    border-radius: 0;
-    border: 2px solid transparent;
-    color: #FFFFFF;
-    font-weight: bold;
-    margin: 40px 0 0 0;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    height: 50px;
-    width: 250px;
-    padding: 12px 10px 10px 10px;
-}
-.flexslider .btn:hover,
-.flexslider .btn:focus {
-    background: #fff;
-    color: #93ca3a;
-    border: 2px solid transparent;
-}
+
 
 /* end home */
-
-/* start service */
-#service .media
-    {
-        padding: 10px;
-    }
-#service .media .fa
-    {
-        color: #202020;
-        font-size: 40px;
-        margin-right: 20px;
-    }
-#service .media .media-heading
-    {
-        border-bottom: 2px solid #202020;
-        font-weight: 600;
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-/* end service */
 
 /* start divider */
 #divider
@@ -531,11 +537,26 @@ box-shadow: 0px 0px 13px #1a690a;
 /* start EVENTOs */
 #evento
     {
-        background: url('../images/maxresdefault.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #ffffff;
+        color: black;
     }
+#evento .style3{
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: #93ca3a;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+#evento .style3:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #93ca3a;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
 #evento h3
     {
         font-weight: bold;

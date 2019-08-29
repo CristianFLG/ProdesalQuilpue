@@ -5,11 +5,10 @@
 		<div class="container">
 			@foreach($eventos as $evento)
 			<div class="row">			
-				
-					<div class="col-md-12 col-sm-5" data-wow-delay="0.9s">
+						<div class="col-md-12 col-sm-5" data-wow-delay="0.9s">
 						<h3>{{ $evento->titulo }}</h3>
 						<p><i class="fa fa-map-marker too-icon"></i> {{ $evento->ubicacion }}</p>
-						<p><i class="fa fa-calendar too-icon"></i>{{ $evento->fecha_ini }} hasta {{ $evento->fecha_ter }}</p>
+						<p><i class="fa fa-calendar too-icon"></i><b>{{ $evento->fecha_ini }}</b> hasta <b>{{ $evento->fecha_ter }}</b></p>
 						<p>{{ $evento->informacion }}</p>
 					</div>
 					@foreach($evento->imagens as $imag)

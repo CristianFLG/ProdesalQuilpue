@@ -23,7 +23,7 @@
                     			<div class="iso-box col-md-4 col-sm-6 col-xs-12">	
                     				<div class="portfolio-thumb">
                     				 	@foreach($procut->imagens as $imag)
-                    				 	    <img src="{{ $imag->url_img }}" class="fluid-img" alt="portfolio img">
+                    				 	    <img src="{{ $imag->url_img }}" class="fluid-img">
                     				 	@endforeach
                     				 	<h4>{{ $procut->nombre_producto }}/{{ $procut->derivado }}</h4>
                     				 	<a href="{{ route('detalle', $procut->id) }}" class="btn btn-success">Producto</a>

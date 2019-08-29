@@ -23,7 +23,7 @@
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 		<!-- start navigation -->
 		<div class="navbar navbar-fixed-top navbar-default" role="navigation">
-			<div class="container">
+			<div class="container barra">
 				<div class="navbar-header">
 					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon icon-bar"></span>

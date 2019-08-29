@@ -2,7 +2,6 @@
 	@section('content')
 		<!-- start home -->
 		<section id="home" class="text-center">
-		  	<div class="templatemo_headerimage">
 		    	<div class="flexslider">
 			      	<ul class="slides">
 			      		@foreach($portadas as $imagenes)
@@ -18,87 +17,51 @@
 			        		@endif
 			        	@endforeach
 			      	</ul>
-		    	</div>
 		  	</div>				
 		</section>
 		<!-- end home -->
 
 		<!-- start DEFINICION DE CONTENIDO -->
-		<div id="service">
+		<div id="service">		
 			<div class="container">
 				<div class="row">
-
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
-								<i class="fa fa-group"></i>
-							</div>
-							<div class="media-body wow fadeIn">
-								<h3 class="media-heading">Productores</h3>
-								<p>Gente posee un gran corazón para dar y recibir, ya sea en sus productos como en las experiencias que pueden entregar.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
-								<i class="fa fa-shopping-cart"></i>
-							</div>
-							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
-								<h3 class="media-heading">Productos</h3>
-								<p>Los productos de la gente de Colliguay salen de la tierra sin ningún tipo de producto artificial de por medio.</p>
+					<div class="col-md-12 text-center">
+						<h2 class="titulo2">¿QUE HACER EN COLLIGUAY?</h2>								
+					</div>	
+				<div id="service_sub">
+					<a href="">
+						<div class="col-md-4 block block-1">
+							<div class="layer">
+								<H3>CAMPING</H3>
 							</div>
 						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
-								<i class="fa fa-envira"></i>
-							</div>
-							<div class="media-body wow fadeIn">
-								<h3 class="media-heading">Experiencias</h3>
-								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en Colliguay.</p>
-							</div>
+					</a>
+					<div class="col-md-4 block block-2">
+						<div class="layer">
+							<H3>SENDERISMO</H3>
 						</div>
 					</div>
-
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
-								<i class="fa fa-flag"></i>
-							</div>
-							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
-								<h3 class="media-heading">Colliguay</h3>
-								<p>El Valle de Colliguay es el lugar perfecto para aventurarse y vivir una experiencia única e inolvidable.</p>
-							</div>
+					<div class="col-md-4 block block-3">
+						<div class="layer">
+							<H3>CABALGATA</H3>
 						</div>
 					</div>
-					
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
-								<i class="fa fa-info"></i>
-							</div>
-							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
-								<h3 class="media-heading">Eventos</h3>
-								<p>se realizan eventos por INDAP para los pequeños agricultores de colliguay puedan acercarce al publico.</p>
-							</div>
+					<div class="col-md-4 block block-4">
+						<div class="layer">
+							<H3>FESTIVAL</H3>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="media">
-							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
-								<i class="fa fa-handshake-o"></i>
-							</div>
-							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
-								<h3 class="media-heading">INDAP</h3>
-								<p>Pretende terminar con la pobreza rural, generando políticas de desarrollo sustentable al campesinado.</p>
-							</div>
+					<div class="col-md-4 block block-5">
+						<div class="layer">
+							<H3>ALOJAMIENTO</H3>
 						</div>
 					</div>
-										
+					<div class="col-md-4 block block-6">
+						<div class="layer">
+							<H3>VISITAS GUIADAS</H3>
+						</div>
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>
