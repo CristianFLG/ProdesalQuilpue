@@ -26,9 +26,7 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="col-ms-12 persona_division" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%"></div>
-	
+	<hr>	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">

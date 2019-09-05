@@ -65,12 +65,14 @@ class ProductosController extends Controller
         //imagen
         if($request->file('image'))
         {
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $imagen = new Imagen;
-            $imagen->fill(['url_img' => asset($path)])->save();
-            $productos->imagens()->attach($imagen->id);
+            foreach($request->file('image') as $file)
+            {
+                $path = Storage::disk('public')->put('image', $file);
+                $imagen = new Imagen;
+                $imagen->fill(['url_img' => asset($path)])->save();
+                $productos->imagens()->attach($imagen->id);
+            }
         }
-
         return redirect()->route('productores.show', $request->id_productor)
         ->with('info','Producto Creado con éxito !!');
     }
@@ -130,17 +132,20 @@ class ProductosController extends Controller
         //imagen
          if($request->file('image'))
         {
-            foreach ($productor->imagens as $img) 
+            foreach ($producto->imagens as $img) 
             {
                 $path = parse_url($img->url_img);
                 unlink(public_path($path['path']));
                 Imagen::find($img->id)->delete();
             }
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $imagen = new Imagen;
-            $imagen->fill(['url_img' => asset($path)])->save();
-            //imagen-experiencia
-            $producto->imagens()->sync($imagen->id);
+            foreach($request->file('image') as $file)
+            {
+                $path = Storage::disk('public')->put('image', $file);
+                $imagen = new Imagen;
+                $imagen->fill(['url_img' => asset($path)])->save();
+                //imagen-experiencia
+                $producto->imagens()->attach($imagen->id);
+            }
         }
 
         return redirect()->route('productores.show', $request->id_productor)
@@ -163,6 +168,6 @@ class ProductosController extends Controller
             Imagen::find($img->id)->delete();
         }
         $producto = Producto::find($id)->delete();
-        return back()->with('info', 'Eliminado Correctamente');
+        return redirect()->route('productos.index')->with('info','Evento eliminado con éxito !!'); 
     }
 }

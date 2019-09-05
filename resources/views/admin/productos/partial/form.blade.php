@@ -28,7 +28,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('image', 'Imagen') }}
-    {{ Form::file('image') }}
+    {{ Form::file('image[]', array('multiple' => true)) }}
 </div>
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-danger']) }}

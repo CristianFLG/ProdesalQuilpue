@@ -28,35 +28,37 @@ class EventosController extends Controller
         return view('admin.eventos.create');     
     }
 
-    //subir evento
+    //--------------------SUBIR EVENTO---------------------------
       public function store(EventoStoreRequest $request)
     {
         $eventos = Evento::create($request->all()); 
         //imagen
-     
         if($request->file('image'))
         {
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $imagen = new Imagen;
-            $imagen->fill(['url_img' => asset($path)])->save();
-            $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
+            foreach($request->file('image') as $file)
+            {
+                $path = Storage::disk('public')->put('image',  $file);
+                $imagen = new Imagen;
+                $imagen->fill(['url_img' => asset($path)])->save();
+                $eventos->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
+            }
         }
         return redirect()->route('eventos.index', $eventos->id)
         ->with('info','Evento Creada con éxito !!');
 	}
-
+    //________ver_______
 	 public function show($id)
     {
         $evento = Evento::with('imagens')->find($id); 
         return view('admin.eventos.show', compact('evento'));
     }
-
+    //editar
     public function edit($id)
     {
         $evento = Evento::find($id);   
         return view('admin.eventos.edit', compact('evento'));
     }
-
+//-----------------FIN DE SUBIR EVENTO-------------------------------------
 
 
     public function update(Request $request, $id)
@@ -72,10 +74,13 @@ class EventosController extends Controller
                 unlink(public_path($path['path']));
                 $imagen = Imagen::find($img->id)->delete();
             }
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $imagen = new Imagen;
-            $imagen->fill(['url_img' => asset($path)])->save();
-            $evento->imagens()->sync($imagen->id);//enlace de tabla imagen con productor
+            foreach($request->file('image') as $file)
+            {
+                $path = Storage::disk('public')->put('image',  $file);
+                $imagen = new Imagen;
+                $imagen->fill(['url_img' => asset($path)])->save();
+                $evento->imagens()->attach($imagen->id);//enlace de tabla imagen con productor
+            }
         } 
         return redirect()->route('eventos.index', $evento->id)
         ->with('info','Evento Actualizado con éxito !!');
@@ -93,6 +98,6 @@ class EventosController extends Controller
 
         $evento = Evento::find($id)->delete();
 
-        return back()->with('info', 'Eliminado Correctamente');   
+        return redirect()->route('eventos.index')->with('info','Evento eliminado con éxito !!');   
     }
 }

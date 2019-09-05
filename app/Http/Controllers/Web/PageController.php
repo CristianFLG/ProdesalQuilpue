@@ -23,6 +23,7 @@ class PageController extends Controller
 		$rubros = Rubro::get();
 		$productos = Producto::with('imagens','productors')->paginate(3);
 		$experiencias = Experiencia::with('imagenes','productores')->paginate(3);
+		$evento = Evento::with('imagens')->paginate()->last();
 		//JAVA solo javascript
 		$product = Productor::with('imagen')->paginate();
 		JavaScript::put([
@@ -30,7 +31,7 @@ class PageController extends Controller
 			'productores' => $product,
 			'rubros' => $rubros
 		]);
-		return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros'));
+		return view('layouts.boostrap',compact('productores','portadas','productos','experiencias','rubros','evento'));
 	}
 
 	public function personas($id)
@@ -112,7 +113,6 @@ class PageController extends Controller
     {
         $search = $request->get('search');
         $productos = Producto::where('nombre_producto','like','%'.$search.'%')->paginate();
-        dd($productos);
         return view('web.todoproductos',compact('productos'));
     }
 	public function productos()
@@ -132,8 +132,15 @@ class PageController extends Controller
 		]);
 		return view('web.eventos',compact('eventos'));
 	}
-	public function prueba()
+	public function quehacer()
 	{
-		return view('web.prueba');
+		$rubros = Rubro::get();
+		$product = Productor::with('imagen')->paginate();
+		JavaScript::put([
+			'productor' => null,
+			'productores' => $product,
+			'rubros' => $rubros
+		]);
+		return view('web.quehacer');
 	}
 }

@@ -1,0 +1,22 @@
+/* INICIO VISTAS ADMINISTRADOR*/
+.sep-20{
+    margin-bottom: 20px;
+}
+#vistas .sep-20 > strong{
+	background-color: yellow;
+	padding: 5px 20px 5px 20px;
+	 -webkit-border-top-left-radius:0px;
+    -webkit-border-top-right-radius:75px;
+    -webkit-border-bottom-left-radius:75px;
+    -webkit-border-bottom-right-radius:0px;
+}
+#vistas hr {
+  height: 4px;
+  margin-left: 15px;
+  margin-bottom:20px;
+
+}
+#vistas .hr-primary{
+  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
+
+}

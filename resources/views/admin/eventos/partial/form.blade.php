@@ -10,7 +10,7 @@
     {{ Form::label('fecha_ini', 'Fecha de Inicio') }}
     {{ Form::date('fecha_ini',date('Y-m-d')) }}
     <br>
-     {{ Form::label('fecha_ter', 'Fecha de Inicio') }}
+     {{ Form::label('fecha_ter', 'Fecha de Término') }}
     {{ Form::date('fecha_ter',date('Y-m-d')) }}
 </div>
 <div class="form-group">
@@ -26,7 +26,7 @@
 </div>
 <div class="form-group">
     {{ Form::label('image', 'Imagen') }}
-    {{ Form::file('image') }}
+    {{ Form::file('image[]', array('multiple' => true)) }}
 </div>
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-danger']) }}

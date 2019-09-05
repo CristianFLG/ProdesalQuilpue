@@ -21,6 +21,7 @@ Route::get('/productores_todos','Web\PageController@productores')
 Route::get('/experiencias_todos','Web\PageController@experiencias')
 ->name('experiencias_todos');
 Route::get('/informacion','Web\PageController@eventos')->name('informacion');
+Route::get('/quehacer','Web\PageController@quehacer')->name('quehacer');
 
 //BUSCARDOR Administrador
 Route::get('/search', 'Admin\ProductoresController@search')->name('search');

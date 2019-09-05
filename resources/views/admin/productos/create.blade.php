@@ -11,7 +11,7 @@
                 </div>
                 <br>
                 <div class="panel-body">
-                    {!! Form::open(['route' => 'productos.store','files' => true]) !!}
+                    {!! Form::open(array('route' => 'productos.store','files' => true)) !!}
                         
                         @include('admin.productos.partial.form')
 

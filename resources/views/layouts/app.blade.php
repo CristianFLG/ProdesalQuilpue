@@ -17,6 +17,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/imagen.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -56,7 +57,7 @@
                                     <a class="dropdown-item" href="{{ route('asociaciones.index') }}">Asociaciones</a>
                                     <a class="dropdown-item" href="{{ route('capitalcultural.index') }}">Capital Cultural</a>
                                     <a class="dropdown-item" href="{{ route('rubros.index') }}">Rubros</a>
-
+                                    <a class="dropdown-item" href="/">Página Web</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

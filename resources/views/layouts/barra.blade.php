@@ -19,6 +19,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
 		<!-- custom -->
 		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/carrousel.css') }}">
+
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 		<!-- start navigation -->
@@ -48,6 +50,9 @@
 						<li>
 							<a href="{{ route('productos_todos') }}" class="smoothScroll">FRUTOS DE LA ZONA</a>
 						</li>
+						<li>
+							<a href="{{ route('quehacer') }}" class="smoothScroll">¿QUE HACER?</a>
+						</li>
 					</ul>
 					</div> 
 				</div>
@@ -59,7 +64,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-7">
-						<p>Copyright &copy; 2018 Universidad Playa Ancha</p>
+						<p>Copyright &copy; 2019 Universidad Playa Ancha</p>
 						<small>Diseñada por<a rel="nofollow" href="#" target="_parent"> Cristian Flores Gallardo</a></small>
 					</div>
 					<div class="col-md-4 col-sm-5">
@@ -94,5 +99,7 @@
 		<script src="{{ asset('js/jquery.flexslider.js') }}"></script>
 		<!-- custom -->
 		<script src="{{ asset('js/map.js') }}"></script>
+
+		<script src="{{ asset('js/carrousel.js') }}"></script>		
 </body>
 </html>

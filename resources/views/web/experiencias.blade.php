@@ -1,15 +1,16 @@
 @extends('layouts.barra')
 
 @section('content')
+
 <div id="team">
 	<div class="container">
 		<div class="row">
 			@foreach($experiencias->imagenes as $img)
-			<div class="col-ms-6 col-sm-6" data-wow-delay="0.3s">
+			<div class="col-ms-12 col-sm-12" data-wow-delay="0.3s">
 				<img src="{{ $img->url_img }}" >
 			</div>
 			@endforeach
-			<div class="col-ms-6 col-sm-6 " style="text-align: left;">
+			<div class="col-ms-12 col-sm-12">
 				<h3> {{ $experiencias->nombre_exper }}</h3>
 				<h4>Estado Actual: {{ $experiencias->estado_exper }} </h4>
 				<h4>Precio Actual: ${{ $experiencias->precio }}</h4>
@@ -20,13 +21,11 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="col-ms-12" ><img src="{{ asset('images/separator.jpg') }}" style="height:70px; width: 100%"></div>
-<div id="portfolio">
+	<hr>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2>Experiencias de la Zona</h2>
+						<h2 id="titulo1">Experiencias de la Zona</h2>
 							<div class="iso-section" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="iso-box-wrapper">
@@ -39,7 +38,7 @@
                				 					<h4>{{ $exper->nombre_exper }}</h4>
                				 					<a href="{{ route('detallexper',$exper->id) }}" class="btn btn-warning">Experiencia</a>
                				 					@foreach($exper->productores as $produ)
-               				 					<a href="{{ route('personas',$produ->id) }}" class="btn">Productor</a>
+               				 					<a href="{{ route('personas',$produ->id) }}" class="btn"><b>Productor</b></a>
                				 					@endforeach
                				 				</div>
                				 			</div>

@@ -17,77 +17,120 @@
 			        		@endif
 			        	@endforeach
 			      	</ul>
-		  	</div>				
+		  		</div>				
 		</section>
 		<!-- end home -->
 
 		<!-- start DEFINICION DE CONTENIDO -->
-		<div id="service">		
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<h2 class="titulo2">¿QUE HACER EN COLLIGUAY?</h2>								
-					</div>	
-				<div id="service_sub">
-					<a href="">
-						<div class="col-md-4 block block-1">
-							<div class="layer">
-								<H3>CAMPING</H3>
-							</div>
-						</div>
-					</a>
-					<div class="col-md-4 block block-2">
-						<div class="layer">
-							<H3>SENDERISMO</H3>
-						</div>
+<div id="service">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="media">
+					<div class="media-object media-left wow fadeIn" data-wow-delay="0.3s">
+						<i class="fa fa-group"></i>
 					</div>
-					<div class="col-md-4 block block-3">
-						<div class="layer">
-							<H3>CABALGATA</H3>
-						</div>
-					</div>
-					<div class="col-md-4 block block-4">
-						<div class="layer">
-							<H3>FESTIVAL</H3>
-						</div>
-					</div>
-					<div class="col-md-4 block block-5">
-						<div class="layer">
-							<H3>ALOJAMIENTO</H3>
-						</div>
-					</div>
-					<div class="col-md-4 block block-6">
-						<div class="layer">
-							<H3>VISITAS GUIADAS</H3>
-						</div>
+					<div class="media-body wow fadeIn">
+						<h3 class="media-heading">Frutos</h3>
+						<p>Gente posee un gran corazón para dar y recibir, ya sea en sus productos como en las experiencias que pueden entregar.</p>
 					</div>
 				</div>
+			</div>
+
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.6s">
+								<i class="fa fa-shopping-cart"></i>
+							</div>
+							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
+								<h3 class="media-heading">Agricultores</h3>
+								<p>Los productos de la gente de Colliguay salen de la tierra sin ningún tipo de producto artificial de por medio.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.1s">
+								<i class="fa fa-envira"></i>
+							</div>
+							<div class="media-body wow fadeIn">
+								<h3 class="media-heading">Experiencias</h3>
+								<p>Las experiencias otorgan la oportunidad a la gente de experimentar lo que es vivir en Colliguay.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.4s">
+								<i class="fa fa-flag"></i>
+							</div>
+							<div class="media-body wow fadeIn" data-wow-delay="0.3s">
+								<h3 class="media-heading">Colliguay</h3>
+								<p>El Valle de Colliguay es el lugar perfecto para aventurarse y vivir una experiencia única e inolvidable.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
+								<i class="fa fa-info"></i>
+							</div>
+							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
+								<h3 class="media-heading">Eventos</h3>
+								<p>se realizan eventos por INDAP para los pequeños agricultores de colliguay puedan acercarce al publico.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="media">
+							<div class="media-object media-left wow fadeIn" data-wow-delay="0.9s">
+								<i class="fa fa-handshake-o"></i>
+							</div>
+							<div class="media-body wow fadeIn" data-wow-delay="0.6s">
+								<h3 class="media-heading">INDAP</h3>
+								<p>Pretende terminar con la pobreza rural, generando políticas de desarrollo sustentable al campesinado.</p>
+							</div>
+						</div>
+					</div>
+										
 				</div>
 			</div>
 		</div>
 		<!-- end service -->
 
-		<!-- start divider -->
 		<div id="divider">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-1 col-sm-1"></div>
-					<div class="col-md-8 col-sm-8">
-						<h2 class="wow bounce">Muestra de <strong>Esfuerzo</strong></h2>
-						<h3 class="wow fadeIn" data-wow-delay="0.6s"><mark>Expresamos</mark> Nuestra  <mark>Vida</mark> en esta Página</h3>
-					</div>
-					<div class="col-md-2 col-sm-2"></div>
+				
+			<div class="row">
+			<div class="col-md-12">
+						<h2 class="titulo2">PRÓXIMO EVENTO</h2>								
+					</div>				
+				<div class="col-md-12 col-sm-5"  style="text-align: center" data-wow-delay="0.9s">
+					<h3>{{ $evento->titulo }}</h3>
+					<p><i class="fa fa-map-marker too-icon"></i> {{ $evento->ubicacion }}</p>
+					<p><i class="fa fa-calendar too-icon"></i><b>{{ $evento->fecha_ini }}</b> hasta <b>{{ $evento->fecha_ter }}</b></p>
 				</div>
+				
+				@foreach($evento->imagens as $imag)
+					<div class="col-md-4 col-sm-4 " data-wow-delay="0.3s">
+						<img src="{{ $imag->url_img }}" class="img-responsive">
+					</div>
+				@endforeach		
 			</div>
 		</div>
-		<!-- end divider -->
+		</div>
 
 		<!-- start Proveedores -->
 		<div id="team">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-					</div>
+				<div class="col-md-12">
+						<h2 class="titulo2">AGRICULTORES</h2>								
+					</div>	
 					@foreach($productores as $producor)
 							@foreach($producor->imagen as $i)
 							@endforeach
@@ -136,6 +179,9 @@
 					<div class="col-md-12 text-center">
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
+               				 		<div class="col-md-12">
+										<h2 class="titulo2">LOS FURTOS DE LA ZONA</h2>								
+									</div>
                				 		<div class="iso-box-wrapper col4-iso-box">
                				 			@foreach($productos as $procut)
                				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
@@ -199,6 +245,9 @@
 					<div class="col-md-12 text-center">
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
+               				 		<div class="col-md-12">
+						<h2 class="titulo2">EXPERIENCIAS EN LA ZONA</h2>								
+					</div>
                				 		<div class="iso-box-wrapper col4-iso-box">
                				 			@foreach($experiencias as $exper)
                				 			<div class="iso-box graphic photoshop wallpaper col-md-4 col-sm-6 col-xs-12">	
