@@ -180,7 +180,7 @@
 							<div class="iso-section wow fadeIn" data-wow-delay="0.6s">
                				 	<div class="iso-box-section">
                				 		<div class="col-md-12">
-										<h2 class="titulo2">LOS FURTOS DE LA ZONA</h2>								
+										<h2 class="titulo2">LOS FRUTOS DE LA ZONA</h2>								
 									</div>
                				 		<div class="iso-box-wrapper col4-iso-box">
                				 			@foreach($productos as $procut)

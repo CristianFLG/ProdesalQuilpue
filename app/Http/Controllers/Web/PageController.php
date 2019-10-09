@@ -50,7 +50,6 @@ class PageController extends Controller
 	public function detalle($id)
 	{
 		$productos = Producto::with('imagens','productors')->find($id);
-
 		$producto_rubro = Producto::with('imagens')->
 		where('id_rubro',$productos->id_rubro)->get();
 		
@@ -66,7 +65,7 @@ class PageController extends Controller
 		return view('web.experiencias',compact('experiencias','experiencia'));
 	}
 //Buscar de todos los productores
-	    public function searchProductors(Request $request)
+	public function searchProductors(Request $request)
     {
         $search = $request->get('search');
         $productores = Productor::where('id_rubro','like','%'.$search.'%')->with('imagen')->paginate();
@@ -99,7 +98,9 @@ class PageController extends Controller
 
   public function searchExperiencias(Request $request)
     {
+    	$search = $request->get('search');
     	$experiencias = Experiencia::where('nombre_exper','like','%'.$search.'%')->paginate();
+
        return view('web.todoexperiencias',compact('experiencias'));
     }
 
@@ -115,11 +116,21 @@ class PageController extends Controller
         $productos = Producto::where('nombre_producto','like','%'.$search.'%')->paginate();
         return view('web.todoproductos',compact('productos'));
     }
+   
+    public function searchProductoRubro(Request $request)
+    {
+        $search = $request->get('search');
+        $productos = Producto::where('id_rubro','like','%'.$search.'%')->paginate();
+        $rubros = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
+
+        return view('web.todoproductos', compact('productos','rubros'));
+    }
+
 	public function productos()
 	{
 		$productos = Producto::with('imagens','productors')->paginate(8);
-
-		return view('web.todoproductos',compact('productos'));
+		$rubros = Rubro::orderBy('nombre_rubro','ASC')->pluck('nombre_rubro', 'id');
+		return view('web.todoproductos',compact('productos','rubros'));
 	}
 	
 	public function eventos()

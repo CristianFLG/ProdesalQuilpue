@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
                <div class="col-md-6 col-sm-4">
-                    {!! Form::open(['route' => 'searchProductos', 'method' => 'GET', 'class' => 'form-inline'])  !!}
+                    {!! Form::open(['route' => 'searchExperiencias', 'method' => 'GET', 'class' => 'form-inline'])  !!}
                     {!! Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Buscar...']) !!}
                     <button type="submit" class="btn btn-warning"><i class="fa fa-search"></i></button>
                     <a href="{{ route('productos_todos') }}" class="btn btn-primary">

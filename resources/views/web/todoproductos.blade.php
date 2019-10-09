@@ -15,6 +15,17 @@
                     </a>
                     {!! Form::close() !!}
                </div>
+               <div  class="col-md-6 col-sm-4">
+                    {!! Form::open(['route' => 'searchProductoRubro', 'method' => 'GET', 'class' => 'form-inline'])  !!}
+
+                        {!! Form::select('search',$rubros,null, ['class' => 'form-control']) !!}
+
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        <a href="{{ route('productos_todos') }}" class="btn btn-primary">
+                            <i class="fa fa-refresh"></i>
+                        </a>
+                        {!! Form::close() !!}
+               </div>
 			<div class="col-md-12 text-center">
 			     <h2 id="titulo1">Los Frutos de la Zona</h2>
                     	<div class="iso-box-section" data-wow-delay="0.6s">
